@@ -13,7 +13,6 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import rs.ac.bg.fon.nprog.forme.ServerskaForma;
-import rs.ac.bg.fon.nprog.server.ObradaKlijentskihZahtevaNit;
 
 /**
  *
