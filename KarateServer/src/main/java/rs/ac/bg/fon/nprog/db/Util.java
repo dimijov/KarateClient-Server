@@ -19,7 +19,7 @@ public class Util {
     private static Util instance;
     
     private Util() throws FileNotFoundException, IOException{
-        FileInputStream fis = new FileInputStream("resources/db.properties");
+        FileInputStream fis = new FileInputStream("src/main/resources/db.properties");
         properties=new Properties();
         properties.load(fis);
     }

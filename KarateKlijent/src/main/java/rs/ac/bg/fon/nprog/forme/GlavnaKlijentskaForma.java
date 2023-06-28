@@ -109,7 +109,7 @@ public class GlavnaKlijentskaForma extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\NetBeansProjects\\KaratePSKlijent\\resources\\logo.png")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon("src/main/resources/logo.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

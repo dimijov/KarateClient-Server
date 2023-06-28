@@ -58,11 +58,11 @@ public class LoginForma extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\NetBeansProjects\\KaratePSKlijent\\resources\\user.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon("src/main/resources/user.png")); // NOI18N
         jLabel3.setText("     username:");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\NetBeansProjects\\KaratePSKlijent\\resources\\pass.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon("src/main/resources/pass.png")); // NOI18N
         jLabel4.setText("      password:");
 
         txtPassword.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
