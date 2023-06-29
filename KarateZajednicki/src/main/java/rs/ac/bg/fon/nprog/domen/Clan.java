@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+
+
 /**
  *
  * @author HP
@@ -52,6 +54,9 @@ public class Clan implements OpstiDomenskiObjekat{
     }
 
     public void setGrupa(Grupa grupa) {
+    	if(grupa==null) {
+    		throw new NullPointerException("Grupa ne sme biti null");
+    	}
         this.grupa = grupa;
     }
 
@@ -60,6 +65,9 @@ public class Clan implements OpstiDomenskiObjekat{
     }
 
     public void setClanID(int clanID) {
+    	if(clanID<1) {
+    		throw new IllegalArgumentException("ClanId ne sme biti manji od jedan");
+    	}
         this.clanID = clanID;
     }
 
@@ -68,6 +76,9 @@ public class Clan implements OpstiDomenskiObjekat{
     }
 
     public void setIme(String ime) {
+    	if(ime==null) {
+    		throw new NullPointerException("Ime ne sme biti null");
+    	}
         this.ime = ime;
     }
 
@@ -76,6 +87,9 @@ public class Clan implements OpstiDomenskiObjekat{
     }
 
     public void setPrezime(String prezime) {
+    	if(prezime==null) {
+    		throw new NullPointerException("Prezime ne sme biti null");
+    	}
         this.prezime = prezime;
     }
 
@@ -84,6 +98,9 @@ public class Clan implements OpstiDomenskiObjekat{
     }
 
     public void setDatumRodjenja(Date datumRodjenja) {
+    	if(datumRodjenja.after(new Date())) {
+    		throw new IllegalArgumentException("Datum rodjenja ne sme biti posle danasnjeg datuma");
+    	}
         this.datumRodjenja = datumRodjenja;
     }
 
@@ -92,6 +109,9 @@ public class Clan implements OpstiDomenskiObjekat{
     }
 
     public void setAdresa(String adresa) {
+    	if(adresa==null) {
+    		throw new NullPointerException("Adresa ne sme biti null");
+    	}
         this.adresa = adresa;
     }
 
@@ -100,6 +120,14 @@ public class Clan implements OpstiDomenskiObjekat{
     }
 
     public void setBrojTelefona(String brojTelefona) {
+    	if(brojTelefona==null) {
+    		throw new NullPointerException("Broj telefona ne sme biti null");
+    	}
+    	
+    	 if (!brojTelefona.matches("^\\+381\\d{8,9}$")){
+             throw new IllegalArgumentException("Broj telefona nije u formatu za Republiku Srbiju\n Pocinje sa +381 i ima 8 ili 9 cifara");
+         }
+    	
         this.brojTelefona = brojTelefona;
     }
 
@@ -108,6 +136,9 @@ public class Clan implements OpstiDomenskiObjekat{
     }
 
     public void setGrad(Grad grad) {
+    	if(grad==null) {
+    		throw new NullPointerException("Grad ne sme biti null");
+    	}
         this.grad = grad;
     }
 
