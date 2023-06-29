@@ -51,6 +51,9 @@ public class Trening implements OpstiDomenskiObjekat {
     }
 
     public void setSala(Sala sala) {
+    	if(sala==null) {
+    		throw new NullPointerException("Sala ne sme biti null");
+    	}
         this.sala = sala;
     }
 
@@ -59,6 +62,9 @@ public class Trening implements OpstiDomenskiObjekat {
     }
 
     public void setTreningID(int treningID) {
+    	if(treningID<1) {
+    		throw new IllegalArgumentException("TreningId ne sme biti manji od jedan");
+    	}
         this.treningID = treningID;
     }
 
@@ -67,6 +73,9 @@ public class Trening implements OpstiDomenskiObjekat {
     }
 
     public void setNaziv(String naziv) {
+    	if(naziv==null) {
+    		throw new NullPointerException("Naziv ne sme biti null");
+    	}
         this.naziv = naziv;
     }
 
@@ -83,6 +92,9 @@ public class Trening implements OpstiDomenskiObjekat {
     }
 
     public void setTrajanje(int trajanje) {
+    	if(trajanje<=0) {
+    		throw new IllegalArgumentException("Trajanje ne sme biti nula ili manje od nule");
+    	}
         this.trajanje = trajanje;
     }
 
@@ -91,6 +103,9 @@ public class Trening implements OpstiDomenskiObjekat {
     }
 
     public void setTrener(Trener trener) {
+    	if(trener==null) {
+    		throw new NullPointerException("Trener ne sme biti null");
+    	}
         this.trener = trener;
     }
 
@@ -107,6 +122,9 @@ public class Trening implements OpstiDomenskiObjekat {
     }
 
     public void setGrupa(Grupa grupa) {
+    	if(grupa==null) {
+    		throw new NullPointerException("Grupa ne sme biti null");
+    	}
         this.grupa = grupa;
     }
 

@@ -47,6 +47,9 @@ public class StavkaTreninga implements OpstiDomenskiObjekat{
     }
 
     public void setVezba(Vezba vezba) {
+    	if(vezba==null) {
+    		throw new NullPointerException("Vezba ne sme biti null");
+    	}
         this.vezba = vezba;
     }
 
@@ -55,6 +58,9 @@ public class StavkaTreninga implements OpstiDomenskiObjekat{
     }
 
     public void setRbStavke(int rbStavke) {
+    	if(rbStavke<1) {
+    		throw new IllegalArgumentException("Redni broj stavke ne sme biti manji od jedan");
+    	}
         this.rbStavke = rbStavke;
     }
 
@@ -63,6 +69,9 @@ public class StavkaTreninga implements OpstiDomenskiObjekat{
     }
 
     public void setTrening(Trening trening) {
+    	if(trening==null) {
+    		throw new NullPointerException("Trening ne sme biti null");
+    	}
         this.trening = trening;
     }
 
@@ -71,6 +80,9 @@ public class StavkaTreninga implements OpstiDomenskiObjekat{
     }
 
     public void setBrojPonavljanja(int brojPonavljanja) {
+    	if(brojPonavljanja<1) {
+    		throw new IllegalArgumentException("Broj ponavljanja ne sme biti manji od jedan");
+    	}
         this.brojPonavljanja = brojPonavljanja;
     }
 
@@ -79,6 +91,12 @@ public class StavkaTreninga implements OpstiDomenskiObjekat{
     }
 
     public void setTezina(String tezina) {
+    	if(tezina==null) {
+    		throw new NullPointerException("Tezina ne sme biti null");
+    	}
+    	if(!tezina.equalsIgnoreCase("lako") && !tezina.equalsIgnoreCase("srednje") && !tezina.equalsIgnoreCase("tesko")) {
+    		throw new IllegalArgumentException("Tezina mora biti: lako, srednje ili tesko");
+    	}
         this.tezina = tezina;
     }
 
@@ -87,6 +105,9 @@ public class StavkaTreninga implements OpstiDomenskiObjekat{
     }
 
     public void setTrajanje(int trajanje) {
+    	if(trajanje<0) {
+    		throw new IllegalArgumentException("Trajanje ne sme biti manje od nula");
+    	}
         this.trajanje = trajanje;
     }
 
