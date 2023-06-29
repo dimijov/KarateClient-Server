@@ -92,7 +92,7 @@ public class Trening implements OpstiDomenskiObjekat {
     }
 
     public void setTrajanje(int trajanje) {
-    	if(trajanje<=0) {
+    	if(trajanje<0) {
     		throw new IllegalArgumentException("Trajanje ne sme biti nula ili manje od nule");
     	}
         this.trajanje = trajanje;
