@@ -56,6 +56,9 @@ public class Trener implements OpstiDomenskiObjekat {
     }
 
     public void setPassword(String password) {
+    	if(password==null) {
+    		throw new NullPointerException("Password ne sme biti null");
+    	}
         this.password = password;
     }
 
@@ -64,6 +67,9 @@ public class Trener implements OpstiDomenskiObjekat {
     }
 
     public void setTrenerID(int trenerID) {
+    	if(trenerID<1) {
+    		throw new IllegalArgumentException("TrenerID ne sme biti manji od jedan");
+    	}
         this.trenerID = trenerID;
     }
 
@@ -72,6 +78,9 @@ public class Trener implements OpstiDomenskiObjekat {
     }
 
     public void setIme(String ime) {
+    	if(ime==null) {
+    		throw new NullPointerException("Ime ne sme biti null");
+    	}
         this.ime = ime;
     }
 
@@ -80,6 +89,9 @@ public class Trener implements OpstiDomenskiObjekat {
     }
 
     public void setPrezime(String prezime) {
+    	if(prezime==null) {
+    		throw new NullPointerException("Prezime ne sme biti null");
+    	}
         this.prezime = prezime;
     }
 
@@ -88,6 +100,9 @@ public class Trener implements OpstiDomenskiObjekat {
     }
 
     public void setGodineIskustva(int godineIskustva) {
+    	if(godineIskustva<0) {
+    		throw new IllegalArgumentException("Godine iskustva ne smeju biti manji od nula");
+    	}
         this.godineIskustva = godineIskustva;
     }
 
@@ -96,6 +111,12 @@ public class Trener implements OpstiDomenskiObjekat {
     }
 
     public void setPojas(String pojas) {
+    	if(pojas==null) {
+    		throw new NullPointerException("Pojas ne sme biti null");
+    	}
+    	if(!pojas.equalsIgnoreCase("crni") && !pojas.equalsIgnoreCase("plavi") && !pojas.equalsIgnoreCase("braon")) {
+    		throw new IllegalArgumentException("Pojas trenera mora biti:crni,braon ili plavi");
+    	}
         this.pojas = pojas;
     }
 
@@ -104,6 +125,9 @@ public class Trener implements OpstiDomenskiObjekat {
     }
 
     public void setUsername(String username) {
+    	if(username==null) {
+    		throw new NullPointerException("Username ne sme biti null");
+    	}
         this.username = username;
     }
 
