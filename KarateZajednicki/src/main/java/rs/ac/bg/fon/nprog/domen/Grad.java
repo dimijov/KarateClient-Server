@@ -45,6 +45,9 @@ public class Grad implements OpstiDomenskiObjekat{
     }
 
     public void setGradID(int gradID) {
+    	if(gradID<1) {
+    		throw new IllegalArgumentException("GradId ne sme biti manji od jedan");
+    	}
         this.gradID = gradID;
     }
 
@@ -53,6 +56,9 @@ public class Grad implements OpstiDomenskiObjekat{
     }
 
     public void setNaziv(String naziv) {
+    	if(naziv==null) {
+    		throw new NullPointerException("Naziv ne sme biti null");
+    	}
         this.naziv = naziv;
     }
 
@@ -61,6 +67,9 @@ public class Grad implements OpstiDomenskiObjekat{
     }
 
     public void setPostanskiBroj(int postanskiBroj) {
+    	if(postanskiBroj<0) {
+    		throw new IllegalArgumentException("Postanski broj ne sme biti manji od nula");
+    	}
         this.postanskiBroj = postanskiBroj;
     }
     

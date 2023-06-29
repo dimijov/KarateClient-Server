@@ -39,6 +39,9 @@ public class Grupa implements OpstiDomenskiObjekat{
     }
 
     public void setNaziv(String naziv) {
+    	if(naziv==null) {
+    		throw new NullPointerException("Naziv ne sme biti null");
+    	}
         this.naziv = naziv;
     }
 
@@ -47,6 +50,9 @@ public class Grupa implements OpstiDomenskiObjekat{
     }
 
     public void setGrupaID(int grupaID) {
+    	if(grupaID<1) {
+    		throw new IllegalArgumentException("GrupaId ne sme biti manja od jedan");
+    	}
         this.grupaID = grupaID;
     }
 

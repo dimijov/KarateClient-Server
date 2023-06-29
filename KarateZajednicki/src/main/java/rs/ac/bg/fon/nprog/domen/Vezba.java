@@ -41,6 +41,9 @@ public class Vezba implements OpstiDomenskiObjekat {
     }
 
     public void setOpis(String opis) {
+    	if(opis==null) {
+    		throw new NullPointerException("Opis ne sme biti null");
+    	}
         this.opis = opis;
     }
 
@@ -49,6 +52,9 @@ public class Vezba implements OpstiDomenskiObjekat {
     }
 
     public void setVezbaID(int vezbaID) {
+    	if(vezbaID<1) {
+    		throw new IllegalArgumentException("VezbaId ne sme biti manja od jedan");
+    	}
         this.vezbaID = vezbaID;
     }
 
@@ -57,6 +63,9 @@ public class Vezba implements OpstiDomenskiObjekat {
     }
 
     public void setNaziv(String naziv) {
+    	if(naziv==null) {
+    		throw new NullPointerException("Naziv ne sme biti null");
+    	}
         this.naziv = naziv;
     }
 
@@ -65,6 +74,9 @@ public class Vezba implements OpstiDomenskiObjekat {
     }
 
     public void setDuzina(int duzina) {
+    	if(duzina<=0) {
+    		throw new IllegalArgumentException("Duzina ne sme biti nula ili manje od nula");
+    	}
         this.duzina = duzina;
     }
 

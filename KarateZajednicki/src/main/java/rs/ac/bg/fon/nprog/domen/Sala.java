@@ -40,6 +40,9 @@ public class Sala implements OpstiDomenskiObjekat {
     }
 
     public void setKapacitet(int kapacitet) {
+    	if(kapacitet<1) {
+    		throw new IllegalArgumentException("Kapacitet ne sme biti manji od jedan");
+    	}
         this.kapacitet = kapacitet;
     }
 
@@ -48,6 +51,9 @@ public class Sala implements OpstiDomenskiObjekat {
     }
 
     public void setSalaID(int salaID) {
+    	if(salaID<1) {
+    		throw new IllegalArgumentException("SalaId ne sme biti manje od jedan");
+    	}
         this.salaID = salaID;
     }
 
@@ -56,6 +62,9 @@ public class Sala implements OpstiDomenskiObjekat {
     }
 
     public void setNaziv(String naziv) {
+    	if(naziv==null) {
+    		throw new NullPointerException("Naziv ne sme biti null");
+    	}
         this.naziv = naziv;
     }
 
