@@ -7,6 +7,7 @@ package rs.ac.bg.fon.nprog.so;
 
 import java.util.List;
 
+import rs.ac.bg.fon.nprog.db.DBBroker;
 import rs.ac.bg.fon.nprog.domen.OpstiDomenskiObjekat;
 import rs.ac.bg.fon.nprog.domen.Sala;
 import rs.ac.bg.fon.nprog.exception.ServerskiException;
@@ -18,6 +19,15 @@ import rs.ac.bg.fon.nprog.exception.ServerskiException;
 public class SOVratiSale extends OpstaSO {
     
     List<OpstiDomenskiObjekat> lista;
+    
+    public SOVratiSale() {
+     	super();
+     }
+     
+     public SOVratiSale(DBBroker dbb) {
+     	super(dbb);
+     }
+    
     
     @Override
     protected void izvrsiKonkretnuOperaciju() throws ServerskiException {

@@ -7,6 +7,7 @@ package rs.ac.bg.fon.nprog.so;
 
 import java.util.List;
 
+import rs.ac.bg.fon.nprog.db.DBBroker;
 import rs.ac.bg.fon.nprog.domen.OpstiDomenskiObjekat;
 import rs.ac.bg.fon.nprog.domen.Vezba;
 import rs.ac.bg.fon.nprog.exception.ServerskiException;
@@ -19,7 +20,16 @@ public class SOVratiVezbe extends OpstaSO {
     
     List<OpstiDomenskiObjekat> lista;
     
-    @Override
+    
+    public SOVratiVezbe() {
+    	super();
+    }
+    
+    public SOVratiVezbe(DBBroker dbb) {
+    	super(dbb);
+    }
+
+	@Override
     protected void izvrsiKonkretnuOperaciju() throws ServerskiException {
         lista = dbb.vratiSveObjekte(new Vezba());
     }
