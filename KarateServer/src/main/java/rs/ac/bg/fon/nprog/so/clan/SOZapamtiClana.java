@@ -4,6 +4,8 @@
  */
 package rs.ac.bg.fon.nprog.so.clan;
 
+import rs.ac.bg.fon.nprog.db.DBBroker;
+import rs.ac.bg.fon.nprog.domen.Clan;
 import rs.ac.bg.fon.nprog.domen.OpstiDomenskiObjekat;
 import rs.ac.bg.fon.nprog.exception.ServerskiException;
 import rs.ac.bg.fon.nprog.so.OpstaSO;
@@ -18,7 +20,12 @@ public class SOZapamtiClana extends OpstaSO {
     private OpstiDomenskiObjekat clan;
     
     public SOZapamtiClana(OpstiDomenskiObjekat param){
+    	super();
         this.param=param;
+    }
+    
+    public SOZapamtiClana(DBBroker dbb) {
+        super(dbb);
     }
 
     @Override
@@ -40,6 +47,9 @@ public class SOZapamtiClana extends OpstaSO {
 
     @Override
     protected void proveriPreduslov() throws ServerskiException {
+    	if(!(param instanceof Clan) && param!=null) {
+    		throw new ServerskiException("Poslati objekat nije odogvarajuce klase");
+    	}
     }
    
     

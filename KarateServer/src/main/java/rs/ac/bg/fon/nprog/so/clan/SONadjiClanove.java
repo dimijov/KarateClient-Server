@@ -8,6 +8,7 @@ package rs.ac.bg.fon.nprog.so.clan;
 import java.util.ArrayList;
 import java.util.List;
 
+import rs.ac.bg.fon.nprog.db.DBBroker;
 import rs.ac.bg.fon.nprog.domen.Clan;
 import rs.ac.bg.fon.nprog.domen.OpstiDomenskiObjekat;
 import rs.ac.bg.fon.nprog.exception.ServerskiException;
@@ -24,6 +25,10 @@ public class SONadjiClanove extends OpstaSO {
 
     public SONadjiClanove(Clan clan) {
         this.clan = clan;
+    }
+    
+    public SONadjiClanove(DBBroker dbb) {
+    	super(dbb);
     }
 
     @Override
@@ -43,8 +48,19 @@ public class SONadjiClanove extends OpstaSO {
         return lista;
     }
     
+    public void setClan(Clan clan) {
+		this.clan = clan;
+	}
+    
+    public Clan getClan() {
+		return clan;
+	}
+    
     @Override
     protected void proveriPreduslov() throws ServerskiException {
+    	if (clan==null) {
+    		throw new ServerskiException("Objekat na osnovu kog se pretrazuje ne sme biti null");
+    	}
     }
     
     

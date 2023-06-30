@@ -4,6 +4,7 @@
  */
 package rs.ac.bg.fon.nprog.so.clan;
 
+import rs.ac.bg.fon.nprog.db.DBBroker;
 import rs.ac.bg.fon.nprog.domen.OpstiDomenskiObjekat;
 import rs.ac.bg.fon.nprog.exception.ServerskiException;
 import rs.ac.bg.fon.nprog.so.OpstaSO;
@@ -18,7 +19,12 @@ public class SOObrisiClana extends OpstaSO{
     private OpstiDomenskiObjekat obrisan;
     
     public SOObrisiClana(OpstiDomenskiObjekat param) {
+    	super();
         this.param = param;
+    }
+    
+    public SOObrisiClana(DBBroker dbb) {
+    	super(dbb);
     }
     
     @Override
@@ -26,6 +32,14 @@ public class SOObrisiClana extends OpstaSO{
         obrisan = dbb.obrisiObjekat(param);
        
     }
+    
+    public void setParam(OpstiDomenskiObjekat param) {
+		this.param = param;
+	}
+    
+    public OpstiDomenskiObjekat getParam() {
+		return param;
+	}
 
     public OpstiDomenskiObjekat getObrisan() {
         return obrisan;

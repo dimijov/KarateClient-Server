@@ -23,12 +23,14 @@ class SOVratiSaleTest extends OpstaSOTest {
 	SOVratiSale so;
 	
 	@BeforeEach
+	protected
 	void setUp() throws Exception {
 		super.setUp();
 		so=new SOVratiSale(dbb);
 	}
 
 	@AfterEach
+	protected
 	void tearDown() throws Exception {
 		super.tearDown();
 		so=null;

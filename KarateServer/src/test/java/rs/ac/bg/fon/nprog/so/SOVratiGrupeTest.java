@@ -21,12 +21,14 @@ class SOVratiGrupeTest extends OpstaSOTest {
 	SOVratiGrupe so;
 	
 	@BeforeEach
+	protected
 	void setUp() throws Exception {
 		super.setUp();
 		so=new SOVratiGrupe(dbb);
 	}
 
 	@AfterEach
+	protected
 	void tearDown() throws Exception {
 		super.tearDown();
 		so=null;

@@ -5,6 +5,7 @@
 package rs.ac.bg.fon.nprog.so;
 
 import rs.ac.bg.fon.nprog.db.DBBroker;
+import rs.ac.bg.fon.nprog.domen.OpstiDomenskiObjekat;
 import rs.ac.bg.fon.nprog.exception.ServerskiException;
 
 /**

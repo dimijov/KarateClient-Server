@@ -22,11 +22,13 @@ public abstract class OpstaSOTest {
 	protected DBBroker dbb;
 	
 	@BeforeEach
+	protected
 	void setUp() throws Exception {
 		closeable = MockitoAnnotations.openMocks(this);
 	}
 
 	@AfterEach
+	protected
 	void tearDown() throws Exception {
 		closeable.close();
 	}

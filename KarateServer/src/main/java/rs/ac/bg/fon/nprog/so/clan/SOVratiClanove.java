@@ -7,6 +7,7 @@ package rs.ac.bg.fon.nprog.so.clan;
 
 import java.util.List;
 
+import rs.ac.bg.fon.nprog.db.DBBroker;
 import rs.ac.bg.fon.nprog.domen.Clan;
 import rs.ac.bg.fon.nprog.domen.OpstiDomenskiObjekat;
 import rs.ac.bg.fon.nprog.exception.ServerskiException;
@@ -20,6 +21,14 @@ public class SOVratiClanove extends OpstaSO {
     
     List<OpstiDomenskiObjekat> lista;
 
+    public SOVratiClanove() {
+    	super();
+	}
+    
+    public SOVratiClanove(DBBroker dbb) {
+    	super(dbb);
+	}
+    
     @Override
     protected void izvrsiKonkretnuOperaciju() throws ServerskiException {
         lista = dbb.vratiSveObjekte(new Clan());
