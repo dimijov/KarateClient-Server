@@ -7,6 +7,7 @@ package rs.ac.bg.fon.nprog.so;
 
 import java.util.List;
 
+import rs.ac.bg.fon.nprog.db.DBBroker;
 import rs.ac.bg.fon.nprog.domen.Grad;
 import rs.ac.bg.fon.nprog.domen.OpstiDomenskiObjekat;
 import rs.ac.bg.fon.nprog.exception.ServerskiException;
@@ -19,11 +20,18 @@ public class SOVratiGradove extends OpstaSO {
 
     
      List<OpstiDomenskiObjekat> lista;
-    
+     
+     public SOVratiGradove() {
+     	super();
+     }
+
+     public SOVratiGradove(DBBroker dbb) {
+ 		super(dbb);
+ 	}
     
     @Override
     protected void izvrsiKonkretnuOperaciju() throws ServerskiException {
-         lista = dbb.vratiSveObjekte(new Grad());
+         lista = dbb.vratiSveObjekte((OpstiDomenskiObjekat) new Grad());
     }
 
     public List<OpstiDomenskiObjekat> getLista() {

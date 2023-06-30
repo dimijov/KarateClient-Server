@@ -19,6 +19,10 @@ public abstract class OpstaSO {
     public OpstaSO() {
         this.dbb = new DBBroker();
     }
+    
+    public OpstaSO(DBBroker dbb) {
+    	this.dbb=dbb;
+    }
 
     synchronized public void izvrsiOperaciju() throws ServerskiException {
         otvoriKonekciju();
