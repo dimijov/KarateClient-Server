@@ -13,34 +13,103 @@ import java.util.logging.Logger;
 
 /**
  *
+ * Klasa koja predstavlja trenera u karate klubu.
+ * 
+ * Ova klasa implementira interfejs OpstiDomenskiObjekat u odnosu na tabelu trener u bazi.
+ * 
+ * Trener ima svoj ID koji ga jedinstveno identifikuje, ime, prezime, godine iskustva, pojas, korisnicko ime i lozinku.
+ * 
+ * Takođe, trener ima i atribut ulogovan koji označava da li je trener trenutno ulogovan na sistem.
+ *
  * @author HP
+ * @version 1.1.0
+ * 
  */
 public class Trener implements OpstiDomenskiObjekat {
     
+	/**
+	 * ID trenera kao int.
+	 */
     private int trenerID;
+    
+    /**
+     * Ime trenera kao int.
+     */
     private String ime;
+    
+    /**
+     * Prezime trenera kao String.
+     */
     private String prezime;
+    
+    /**
+     * Godine iskustva trenera kao int.
+     */
     private int godineIskustva;
+    
+    /**
+     * Pojas trenera kao String.
+     */
     private String pojas;
+    
+    /**
+     * Korisnicko ime trenera kao String.
+     */
     private String username;
+    
+    /**
+     * Lozinka trenera kao String;
+     */
     private String password;
     
-    
+    /**
+     * Indikator da li je trener ulogovan ili ne.
+     * 
+     * <ul>
+	 * <li>true - Ako je trener ulogovan na sistem </li>
+	 * <li>false - Ako trener nije ulogovan ja sistem </li>
+	 * </ul>
+     */
     private boolean ulogovan;
 
+    
+    /**
+     * Konstruktor koji inicijalizuje objekat klase Trener.
+     */
     public Trener() {
     }
 
+    
+    /**
+     * Konstruktor koji inicijalizuje objekat klase Trener sa prosledjenim ID-jem.
+     * @param trenerID ID trenera kao int.
+     */
     public Trener(int trenerID) {
         this.trenerID = trenerID;
     }
 
+    
+    /**
+     * Konstruktor koji inicijalizuje objekat klase Trener sa prosledjenim korisnickim imenom i lozinkom.
+     * @param username Korisnicko ime trenera kao String.
+     * @param password Lozinka trenera kao String.
+     */
     public Trener(String username, String password) {
         this.username = username;
         this.password = password;
     }
 
     
+    /**
+     * Konstruktor koji inicijalizuje objekat klase Trener sa prosledjenim vrednostima svih atributa.
+     * @param trenerID ID trenera kao int.
+     * @param ime Ime trenera kao String.
+     * @param prezime Prezime trenera kao String.
+     * @param godineIskustva Godine iskustva trenera kao int.
+     * @param pojas Pojas trenera kao String.
+     * @param username Korisnicko ime trenera kao String.
+     * @param password Lozinka trenera kao String.
+     */
     public Trener(int trenerID, String ime, String prezime, int godineIskustva, String pojas, String username, String password) {
         this.trenerID = trenerID;
         this.ime = ime;
@@ -51,10 +120,21 @@ public class Trener implements OpstiDomenskiObjekat {
         this.password = password;
     }
 
+    
+    /**
+     * Metoda koja vraca lozinku trenera.
+     * @return Lozinka trenera kao String.
+     */
     public String getPassword() {
         return password;
     }
 
+    
+    /**
+     * Metoda koja postavlja lozinku trenera.
+     * @param password Lozinka trenera kao String.
+     * @throws NullPointerException ako je password null.
+     */
     public void setPassword(String password) {
     	if(password==null) {
     		throw new NullPointerException("Password ne sme biti null");
@@ -62,10 +142,21 @@ public class Trener implements OpstiDomenskiObjekat {
         this.password = password;
     }
 
+    
+    /**
+     * Metoda koja vraca ID trenera.
+     * @return ID trenera kao int.
+     */
     public int getTrenerID() {
         return trenerID;
     }
 
+    
+    /**
+     * Metoda koja postavlja ID trenera.
+     * @param trenerID ID trenera kao int.
+     * @throws IllegalArgumentException ako je trenerID manji od 1.
+     */
     public void setTrenerID(int trenerID) {
     	if(trenerID<1) {
     		throw new IllegalArgumentException("TrenerID ne sme biti manji od jedan");
@@ -73,10 +164,21 @@ public class Trener implements OpstiDomenskiObjekat {
         this.trenerID = trenerID;
     }
 
+    
+    /**
+     * Metoda koja vraca ime trenera.
+     * @return Ime trenera kao String.
+     */
     public String getIme() {
         return ime;
     }
 
+    
+    /**
+     * Metoda koja postavlja ime trenera.
+     * @param ime Ime trenera kao String.
+     * @throws NullPointerException ako je ime null.
+     */
     public void setIme(String ime) {
     	if(ime==null) {
     		throw new NullPointerException("Ime ne sme biti null");
@@ -84,10 +186,21 @@ public class Trener implements OpstiDomenskiObjekat {
         this.ime = ime;
     }
 
+    
+    /**
+     * Metoda koja vraca prezime trenera.
+     * @return Prezime trenera kao String.
+     */
     public String getPrezime() {
         return prezime;
     }
 
+    
+    /**
+     * Metoda koja postavlja prezime trenera.
+     * @param prezime Prezime trenera kao String.
+     * @throws NullPointerException ako je prezime null.
+     */
     public void setPrezime(String prezime) {
     	if(prezime==null) {
     		throw new NullPointerException("Prezime ne sme biti null");
@@ -95,10 +208,21 @@ public class Trener implements OpstiDomenskiObjekat {
         this.prezime = prezime;
     }
 
+    
+    /**
+     * Metoda koja vraca godine iskustva trenera.
+     * @return Godine iskustva trenera kao int.
+     */
     public int getGodineIskustva() {
         return godineIskustva;
     }
 
+    
+    /**
+     * Metoda koja postavlja godine iskustva trenera.
+     * @param godineIskustva Godine iskustva trenera kao int.
+     * @throws IllegalArgumentException ako su godineIskustva manje od 0.
+     */
     public void setGodineIskustva(int godineIskustva) {
     	if(godineIskustva<0) {
     		throw new IllegalArgumentException("Godine iskustva ne smeju biti manji od nula");
@@ -106,10 +230,22 @@ public class Trener implements OpstiDomenskiObjekat {
         this.godineIskustva = godineIskustva;
     }
 
+    
+    /**
+     * Metoda koja vraca pojas trenera.
+     * @return Pojas trenera kao String.
+     */
     public String getPojas() {
         return pojas;
     }
 
+    
+    /**
+     * Metoda koja postavlja pojas trenera.
+     * @param pojas Pojas trenera kao String.
+     * @throws NullPointerException ako je pojas null.
+     * @throws IllegalArgumentException ako pojas nije "crni", "plavi" ili "braon".
+     */
     public void setPojas(String pojas) {
     	if(pojas==null) {
     		throw new NullPointerException("Pojas ne sme biti null");
@@ -120,10 +256,21 @@ public class Trener implements OpstiDomenskiObjekat {
         this.pojas = pojas;
     }
 
+    
+    /**
+     * Metoda koja vraca korisnicko ime trenera.
+     * @return Korisnicko ime trenera kao String.
+     */
     public String getUsername() {
         return username;
     }
 
+    
+    /**
+     * Metoda koja postavlja korisnicko ime trenera.
+     * @param username Korisnicko ime trenera kao String.
+     * @throws NullPointerException ako je username null.
+     */
     public void setUsername(String username) {
     	if(username==null) {
     		throw new NullPointerException("Username ne sme biti null");
@@ -131,20 +278,55 @@ public class Trener implements OpstiDomenskiObjekat {
         this.username = username;
     }
 
+    
+    /**
+     * 
+     * Vraca String koji predstavlja ime i prezime trenera. 
+     * @return Ime i prezime trenera kao String.
+     *
+     */
     @Override
     public String toString() {
         return ime+" "+prezime;
     }
 
+    
+    /**
+     * Metoda koja postavlja indikator da li je trener ulogovan ili ne.
+     * @param  boolean Indikator da li je trener ulogovan.
+     * <ul>
+	 * <li>true - Ako je trener ulogovan na sistem </li>
+	 * <li>false - Ako trener nije ulogovan ja sistem </li>
+	 * </ul>
+     */
     public void setUlogovan(boolean ulogovan) {
         this.ulogovan = ulogovan;
     }
-
+    
+    
+    /**
+     * Metoda koja vraca indikator da li je trener ulogovan ili ne.
+     * @return boolean Indikator da li je trener ulogovan.
+     * <ul>
+	 * <li>true - Ako je trener ulogovan na sistem </li>
+	 * <li>false - Ako trener nije ulogovan ja sistem </li>
+	 * </ul>
+     */
     public boolean isUlogovan() {
         return ulogovan;
     }
 
     
+    /**
+     * Poredi dva trenera po njihovom ID imenu i vraca true ili false.
+     * 
+     * @param obj Objekat sa kojim se vrsi uporedjivanje.
+     * @return
+	 * <ul>
+	 * <li>true - ako su oba objekta klase Trener i imaju isti ID. </li>
+	 * <li>false - u svim ostalim slucajevima </li>
+	 * </ul>
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
