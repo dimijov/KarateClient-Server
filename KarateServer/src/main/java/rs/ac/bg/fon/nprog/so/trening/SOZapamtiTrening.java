@@ -9,6 +9,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import rs.ac.bg.fon.nprog.db.DBBroker;
 import rs.ac.bg.fon.nprog.domen.OpstiDomenskiObjekat;
 import rs.ac.bg.fon.nprog.domen.StavkaTreninga;
 import rs.ac.bg.fon.nprog.domen.Trening;
@@ -24,7 +25,12 @@ public class SOZapamtiTrening extends OpstaSO {
     OpstiDomenskiObjekat trening;
 
     public SOZapamtiTrening(OpstiDomenskiObjekat param) {
+    	super();
         this.param = param;
+    }
+    
+    public SOZapamtiTrening(DBBroker dbb) {
+    	super(dbb);
     }
     
     @Override
@@ -40,6 +46,10 @@ public class SOZapamtiTrening extends OpstaSO {
     public OpstiDomenskiObjekat getTrening() {
         return trening;
     }
+    
+    public void setParam(OpstiDomenskiObjekat param) {
+		this.param = param;
+	}
 
     private void sacuvajStavke() throws ServerskiException {
         Trening tren = (Trening) param;

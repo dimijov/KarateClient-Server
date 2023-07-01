@@ -9,6 +9,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import rs.ac.bg.fon.nprog.db.DBBroker;
 import rs.ac.bg.fon.nprog.domen.OpstiDomenskiObjekat;
 import rs.ac.bg.fon.nprog.domen.StavkaTreninga;
 import rs.ac.bg.fon.nprog.domen.Trening;
@@ -26,8 +27,13 @@ public class SOIzmeniTrening extends OpstaSO {
     
     
     public SOIzmeniTrening(OpstiDomenskiObjekat param) {
+    	super();
         this.param = param;
         
+    }
+    
+    public SOIzmeniTrening(DBBroker dbb) {
+    	super(dbb);
     }
 
     @Override

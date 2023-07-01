@@ -8,6 +8,7 @@ package rs.ac.bg.fon.nprog.so.trening;
 
 import java.util.List;
 
+import rs.ac.bg.fon.nprog.db.DBBroker;
 import rs.ac.bg.fon.nprog.domen.OpstiDomenskiObjekat;
 import rs.ac.bg.fon.nprog.domen.Trening;
 import rs.ac.bg.fon.nprog.exception.ServerskiException;
@@ -23,7 +24,12 @@ public class SONadjiTreninge extends OpstaSO {
     private List<OpstiDomenskiObjekat> listaNadjenih;
 
     public SONadjiTreninge(Trening trening) {
+    	super();
         this.trening = trening;
+    }
+    
+    public SONadjiTreninge(DBBroker dbb) {
+    	super(dbb);
     }
 
     @Override
@@ -32,6 +38,14 @@ public class SONadjiTreninge extends OpstaSO {
     	listaNadjenih=dbb.nadjiObjekte(trening);
         
     }
+    
+    public void setTrening(Trening trening) {
+		this.trening = trening;
+	}
+    
+    public Trening getTrening() {
+		return trening;
+	}
 
     public List<OpstiDomenskiObjekat> getListaNadjenih() {
         return listaNadjenih;

@@ -4,6 +4,7 @@
  */
 package rs.ac.bg.fon.nprog.so.trening;
 
+import rs.ac.bg.fon.nprog.db.DBBroker;
 import rs.ac.bg.fon.nprog.domen.OpstiDomenskiObjekat;
 import rs.ac.bg.fon.nprog.exception.ServerskiException;
 import rs.ac.bg.fon.nprog.so.OpstaSO;
@@ -18,7 +19,12 @@ public class SOObrisiTrening extends OpstaSO {
     private OpstiDomenskiObjekat obrisan;
     
     public SOObrisiTrening(OpstiDomenskiObjekat param) {
+    	super();
         this.param = param;
+    }
+    
+    public SOObrisiTrening(DBBroker dbb) {
+    	super(dbb);
     }
     
     @Override
@@ -33,4 +39,14 @@ public class SOObrisiTrening extends OpstaSO {
     @Override
     protected void proveriPreduslov() throws ServerskiException {
     }
+    
+    
+    public void setParam(OpstiDomenskiObjekat param) {
+		this.param = param;
+	}
+    
+    
+    public OpstiDomenskiObjekat getParam() {
+		return param;
+	}
 }

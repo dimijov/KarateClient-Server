@@ -66,7 +66,7 @@ class SONadjiClanoveTest extends OpstaSOTest {
 			so.izvrsiOperaciju();
 			verify(dbb, times(1)).vratiObjekte((OpstiDomenskiObjekat) c1);
 			assertEquals(listaClanova2, so.getLista());
-			assertEquals(1, listaClanova2.size());
+			assertEquals(1, so.getLista().size());
 
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
