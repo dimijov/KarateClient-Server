@@ -12,23 +12,66 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
- * @author HP
- */
+*
+* Klasa koja predstavlja vezbu u programu treninga.
+* 
+* Ova klasa implementira interfejs OpstiDomenskiObjekat u odnosu na tabelu vezba u bazi.
+* 
+* Vezba ima svoj ID koji je jedinstven identifikator, naziv, opis i trajanje.
+* 
+*
+* @author HP
+* @version 1.1.0
+* 
+*/
 public class Vezba implements OpstiDomenskiObjekat {
     
+	/**
+     * ID vezbe kao int.
+     */
     private int vezbaID;
+    
+    /**
+     * Naziv vezbe kao String.
+     */
     private String naziv;
+    
+    /**
+     * Opis vezbe kao String.
+     */
     private String opis;
+    
+    /**
+     * Trajanje vezbe kao int.
+     */
     private int duzina;
 
+    
+    /**
+     * Konstruktor koji inicijalizuje objekat klase Vezba.
+     */
     public Vezba() {
     }
 
+    
+    /**
+     * Konstruktor koji inicijalizuje objekat klase Vezba sa prosledjenim ID-jem.
+     * 
+     * @param vezbaID ID vezbe kao int.
+     */
     public Vezba(int vezbaID) {
         this.vezbaID = vezbaID;
     }
 
+    
+    /**
+     * Konstruktor koji inicijalizuje objekat klase Vezba sa prosleđenim vrednostima svih atributa.
+     * 
+     * @param vezbaID ID vezbe kao int.
+     * @param naziv Naziv vezbe kao String.
+     * @param opis Opis vezbe kao String.
+     * @param duzina Trajanje vezbe kao int.
+     */
     public Vezba(int vezbaID, String naziv, String opis,int duzina) {
         this.vezbaID = vezbaID;
         this.naziv = naziv;
@@ -36,10 +79,23 @@ public class Vezba implements OpstiDomenskiObjekat {
         this.duzina=duzina;
     }
 
+    
+    /**
+     * Metoda koja vraca opis vezbe.
+     * 
+     * @return Opis vezbe kao String.
+     */
     public String getOpis() {
         return opis;
     }
 
+    
+    /**
+     * Metoda koja postavlja opis vezbe.
+     * 
+     * @param opis Opis vezbe kao String.
+     * @throws NullPointerException ako je opis null.
+     */
     public void setOpis(String opis) {
     	if(opis==null) {
     		throw new NullPointerException("Opis ne sme biti null");
@@ -47,10 +103,21 @@ public class Vezba implements OpstiDomenskiObjekat {
         this.opis = opis;
     }
 
+    
+    /**
+     * Metoda koja vraca ID vezbe.
+     * @return ID vezbe kao int.
+     */
     public int getVezbaID() {
         return vezbaID;
     }
 
+    /**
+     * Metoda koja postavlja ID vezbe.
+     * 
+     * @param vezbaID ID vezbe kao int.
+     * @throws IllegalArgumentException ako je vezbaID manji od 1.
+     */
     public void setVezbaID(int vezbaID) {
     	if(vezbaID<1) {
     		throw new IllegalArgumentException("VezbaId ne sme biti manja od jedan");
@@ -58,10 +125,23 @@ public class Vezba implements OpstiDomenskiObjekat {
         this.vezbaID = vezbaID;
     }
 
+    
+    /**
+     * Metoda koja vraca naziv vezbe.
+     * 
+     * @return Naziv vezbe kao String.
+     */
     public String getNaziv() {
         return naziv;
     }
 
+    
+    /**
+     * Metoda koja postavlja naziv vezbe.
+     * 
+     * @param naziv Naziv vezbe kao String.
+     * @throws NullPointerException ako je naziv null.
+     */
     public void setNaziv(String naziv) {
     	if(naziv==null) {
     		throw new NullPointerException("Naziv ne sme biti null");
@@ -69,10 +149,23 @@ public class Vezba implements OpstiDomenskiObjekat {
         this.naziv = naziv;
     }
 
+    
+    /**
+     * Metoda koja vraca trajanje vezbe.
+     * 
+     * @return Trajanje vezbe kao String.
+     */
     public int getDuzina() {
         return duzina;
     }
 
+    
+    /**
+     * Metoda koja postavlja trajanje vezbe.
+     * 
+     * @param duzina Trajanje vezbe kao int.
+     * @throws IllegalArgumentException ako je trajanje manje od 1.
+     */
     public void setDuzina(int duzina) {
     	if(duzina<=0) {
     		throw new IllegalArgumentException("Duzina ne sme biti nula ili manje od nula");
@@ -81,11 +174,27 @@ public class Vezba implements OpstiDomenskiObjekat {
     }
 
     
+    /**
+     * Metoda koja vraca String koji predstavlja naziv vezbe.
+     *
+     * @return Naziv vezbe kao String.
+     */
     @Override
     public String toString() {
         return naziv;
     }
 
+    
+    /**
+     * Metoda koja poredi dve vezbe po njihovom ID-u i vraca true ili false.
+     *
+     * @param obj Objekat sa kojim se vrsi upoređivanje.
+     * @return
+     *<ul>
+     *<li>true - ako su oba objekta klase Vezba i imaju isti ID.</li>
+     *<li>false - u svim ostalim slučajevima.</li>
+     *</ul>
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

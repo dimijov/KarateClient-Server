@@ -12,32 +12,71 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
- * @author HP
- */
+*
+* Klasa koja predstavlja grupu u karate klubu.
+* 
+* Ova klasa implementira interfejs OpstiDomenskiObjekat u odnosu na tabelu grupa u bazi.
+* 
+* Grupa ima svoj ID koji je jedinstven identifikator, kao i naziv koji opisuje grupu.
+* 
+*
+* @author HP
+* @version 1.1.0
+* 
+*/
 public class Grupa implements OpstiDomenskiObjekat{
     
+	/**
+	 * ID grupe kao int.
+	 */
     private int grupaID;
+    
+    /**
+     * Naziv grupe kao String.
+     */
     private String naziv;
 
+    /**
+     * Konstruktor koji inicijalizuje objekat klase Grupa.
+     */
     public Grupa() {
     }
 
+    
+    /**
+     * Konstruktor koji inicijalizuje objekat klase Grupa sa prosleđenim ID-jem.
+     * @param grupaID ID grupe kao int.
+     */
     public Grupa(int grupaID) {
         this.grupaID = grupaID;
     }
     
     
-
+    /**
+     * Konstruktor koji inicijalizuje objekat klase Grupa sa prosleđenim vrednostima svih atributa.
+     * @param grupaID ID grupe kao int.
+     * @param naziv Naziv grupe kao String.
+     */
     public Grupa(int grupaID, String naziv) {
         this.grupaID = grupaID;
         this.naziv = naziv;
     }
 
+    
+    /**
+     * Metoda koja vraca naziv grupe.
+     * @return Naziv grupe kao String.
+     */
     public String getNaziv() {
         return naziv;
     }
 
+    
+    /**
+     * Metoda koja postavlja naziv grupe.
+     * @param naziv Naziv grupe kao String.
+     * @throws NullPointerException ako je naziv null.
+     */
     public void setNaziv(String naziv) {
     	if(naziv==null) {
     		throw new NullPointerException("Naziv ne sme biti null");
@@ -45,10 +84,19 @@ public class Grupa implements OpstiDomenskiObjekat{
         this.naziv = naziv;
     }
 
+    /**
+     * Metoda koja vraca ID grupe.
+     * @return ID grupe kao int.
+     */
     public int getGrupaID() {
         return grupaID;
     }
 
+    /**
+     * Metoda koja postavlja ID grupe.
+     * @param grupaID ID grupe kao int.
+     * @throws IllegalArgumentException ako je grupaID manji od 1.
+     */
     public void setGrupaID(int grupaID) {
     	if(grupaID<1) {
     		throw new IllegalArgumentException("GrupaId ne sme biti manja od jedan");
@@ -57,7 +105,15 @@ public class Grupa implements OpstiDomenskiObjekat{
     }
 
    
-
+    /**
+     * Poredi dve grupe po njihovom ID-u i vraća true ili false.
+     * @param obj Objekat sa kojim se vrši upoređivanje.
+     * @return
+     *  <ul>
+     *  <li>true - ako su oba objekta klase Grupa i imaju isti ID.</li>
+     *  <li>false - u svim ostalim slučajevima.</li>
+     *  </ul>
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -73,6 +129,12 @@ public class Grupa implements OpstiDomenskiObjekat{
         return this.grupaID == other.grupaID;
     }
 
+    /**
+     * 
+     * Vraca String koji predstavlja naziv grupe. 
+     * @return Naziv grupe kao String.
+     *
+     */
     @Override
     public String toString() {
         return naziv;

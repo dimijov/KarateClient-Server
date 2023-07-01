@@ -12,38 +12,95 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
- * @author HP
- */
+*
+* Klasa koja predstavlja osnovne podatke o gradu u Srbiji.
+* 
+* Ova klasa implementira interfejs OpstiDomenskiObjekat u odnosu na tabelu grad u bazi.
+* 
+* Grad ima svoj ID koji ga jedinstveno identifikuje, naziv i postanski broj.
+* 
+*
+* @author HP
+* @version 1.1.0
+* 
+*/
 public class Grad implements OpstiDomenskiObjekat{
     
+	/**
+	 * ID grada kao int.
+	 */
      private int gradID;
+     
+     /**
+      * Naziv grada kao String.
+      */
      private String naziv;
+     
+     /**
+      * Postanski broj grada kao int.
+      */
      private int postanskiBroj;
 
+     
+     /**
+      * Konstruktor koji inicijalizuje objekat klase Grad.
+      */
     public Grad() {
     }
-
+    
+    
+    /**
+     * Konstruktor koji inicijalizuje objekat klase Grad sa prosledjenim ID-jem.
+     * 
+     * @param gradID ID grada kao int.
+     */
     public Grad(int gradID) {
         this.gradID = gradID;
     }
 
     
+    /**
+     * Konstruktor koji inicijalizuje objekat klase Grad sa prosledjenim vrednostima svih atributa.
+     * 
+     * @param gradID ID grada kao int.
+     * @param naziv Naziv grada kao String.
+     * @param postanskiBroj Postanski broj grada kao int.
+     */
     public Grad(int gradID, String naziv, int postanskiBroj) {
         this.gradID = gradID;
         this.naziv = naziv;
         this.postanskiBroj = postanskiBroj;
     }
 
+    
+    /**
+     * 
+     * Vraca String koji predstavlja naziv grada. 
+     * @return Naziv grada kao String.
+     *
+     */
     @Override
     public String toString() {
         return naziv;
     }
 
+    
+    /**
+     * Metoda koja vraca ID grada.
+     * 
+     * @return ID grada kao int.
+     */
     public int getGradID() {
         return gradID;
     }
 
+    
+    /**
+     * Metoda koja postavlja ID grada.
+     * 
+     * @param gradID ID grada kao int.
+     * @throws IllegalArgumentException ako je gradID manji od 1.
+     */
     public void setGradID(int gradID) {
     	if(gradID<1) {
     		throw new IllegalArgumentException("GradId ne sme biti manji od jedan");
@@ -51,10 +108,23 @@ public class Grad implements OpstiDomenskiObjekat{
         this.gradID = gradID;
     }
 
+    
+    /**
+     * Metoda koja vraca naziv grada.
+     * 
+     * @return Naziv grada kao String.
+     */
     public String getNaziv() {
         return naziv;
     }
 
+    
+    /**
+     * Metoda koja postavlja naziv grada.
+     * 
+     * @param naziv Naziv grada kao String.
+     * @throws NullPointerException ako je naziv null.
+     */
     public void setNaziv(String naziv) {
     	if(naziv==null) {
     		throw new NullPointerException("Naziv ne sme biti null");
@@ -62,10 +132,22 @@ public class Grad implements OpstiDomenskiObjekat{
         this.naziv = naziv;
     }
 
+    
+    /**
+     * Metoda koja vraca postanski broj grada.
+     * 
+     * @return Postanski broj grada kao int.
+     */
     public int getPostanskiBroj() {
         return postanskiBroj;
     }
 
+    /**
+     * Metoda koja postavlja postanski broj grada.
+     * 
+     * @param postanskiBroj Postanski broj grada kao int.
+     * @throws IllegalArgumentException ako je postanski broj manji od 0.
+     */
     public void setPostanskiBroj(int postanskiBroj) {
     	if(postanskiBroj<0) {
     		throw new IllegalArgumentException("Postanski broj ne sme biti manji od nula");
@@ -131,7 +213,16 @@ public class Grad implements OpstiDomenskiObjekat{
         this.gradID=pk;
     }
 
-
+    /**
+     * Poredi dva grada po njihovom ID-u i vraca true ili false.
+     * 
+     * @param obj Objekat sa kojim se vrsi uporedjivanje.
+     * @return
+     * <ul>
+     * <li>true - ako su oba objekta klase Grad i imaju isti ID. </li>
+     * <li>false - u svim ostalim slucajevima. </li>
+     * </ul>
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
