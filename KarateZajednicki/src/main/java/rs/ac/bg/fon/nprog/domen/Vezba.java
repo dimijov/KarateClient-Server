@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 * 
 * Ova klasa implementira interfejs OpstiDomenskiObjekat u odnosu na tabelu vezba u bazi.
 * 
-* Vezba ima svoj ID koji je jedinstven identifikator, naziv, opis i trajanje.
+* Vezba ima svoj ID koji je jedinstven identifikator, naziv, opis i trajanje u minutima.
 * 
 *
 * @author HP
@@ -42,7 +42,7 @@ public class Vezba implements OpstiDomenskiObjekat {
     private String opis;
     
     /**
-     * Trajanje vezbe kao int.
+     * Trajanje vezbe u minutima kao int.
      */
     private int duzina;
 
@@ -70,7 +70,7 @@ public class Vezba implements OpstiDomenskiObjekat {
      * @param vezbaID ID vezbe kao int.
      * @param naziv Naziv vezbe kao String.
      * @param opis Opis vezbe kao String.
-     * @param duzina Trajanje vezbe kao int.
+     * @param duzina Trajanje vezbe u minutima kao int.
      */
     public Vezba(int vezbaID, String naziv, String opis,int duzina) {
         this.vezbaID = vezbaID;
@@ -151,9 +151,9 @@ public class Vezba implements OpstiDomenskiObjekat {
 
     
     /**
-     * Metoda koja vraca trajanje vezbe.
+     * Metoda koja vraca trajanje vezbe u minutima.
      * 
-     * @return Trajanje vezbe kao String.
+     * @return Trajanje vezbe u minutima kao int.
      */
     public int getDuzina() {
         return duzina;
@@ -161,10 +161,10 @@ public class Vezba implements OpstiDomenskiObjekat {
 
     
     /**
-     * Metoda koja postavlja trajanje vezbe.
+     * Metoda koja postavlja trajanje vezbe u minutima.
      * 
-     * @param duzina Trajanje vezbe kao int.
-     * @throws IllegalArgumentException ako je trajanje manje od 1.
+     * @param duzina Trajanje vezbe u minutima kao int.
+     * @throws IllegalArgumentException ako je trajanje manje od 0.
      */
     public void setDuzina(int duzina) {
     	if(duzina<=0) {

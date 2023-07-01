@@ -15,29 +15,91 @@ import java.util.logging.Logger;
 
 
 /**
- *
- * @author HP
- */
+*
+* Klasa koja predstavlja člana karate kluba.
+* 
+* Ova klasa implementira interfejs OpstiDomenskiObjekat u odnosu na tabelu clan u bazi.
+* 
+* Član ima svoj ID koji je jedinstven identifikator, kao i ime, prezime, datum rođenja, adresu, broj telefona, grad odakle je i grupa kojoj pripada.
+* 
+*
+* @author HP
+* @version 1.1.0
+* 
+*/
 public class Clan implements OpstiDomenskiObjekat{
     
+	
+	/**
+	 * ID člana kao int.
+	 */
     private int clanID;
+    
+    /**
+     * Ime člana kao String.
+     */
     private String ime;
+    
+    /**
+     * Prezime člana kao String.
+     */
     private String prezime;
+    
+    /**
+     * Datum rođenja člana kao java.util.Date.
+     */
     private Date datumRodjenja;
+    
+    /**
+     * Adresa člana kao String.
+     */
     private String adresa;
+    
+    /**
+     * Broj telefona člana kao String.
+     */
     private String brojTelefona;
+    
+    /**
+     * Grad odakle je član kao objekat klase Grad.
+     */
     private Grad grad;
+    
+    /**
+     * Grupa kojoj član pripada kao objekat klase Grupa.
+     */
     private Grupa grupa;
 
+    
+    /**
+     * Konstruktor koji inicijalizuje objekat klase Clan.
+     */
     public Clan() {
     }
 
+    
+    /**
+     * Konstruktor koji inicijalizuje objekat klase Clan sa prosleđenim ID-jem.
+     * 
+     * @param clanID ID člana kao int.
+     */
     public Clan(int clanID) {
         this.clanID = clanID;
     }
 
     
-    
+    /**
+     * Konstruktor koji inicijalizuje objekat klase Clan sa prosleđenim vrednostima svih atributa.
+     * 
+     * @param clanID ID člana kao int.
+     * @param ime Ime člana kao String.
+     * @param prezime Prezime člana kao String.
+     * @param datumRodjenja Datum rođenja člana kao java.util.Date.
+     * @param adresa Adresa člana kao String.
+     * @param brojTelefona Broj telefona člana kao String.
+     * @param grad Grad odakle je član kao objekat klase Grad.
+     * @param grupa Grupa kojoj član pripada kao objekat klase Grupa.
+     */
     public Clan(int clanID, String ime, String prezime, Date datumRodjenja, String adresa, String brojTelefona, Grad grad, Grupa grupa) {
         this.clanID = clanID;
         this.ime = ime;
@@ -49,10 +111,23 @@ public class Clan implements OpstiDomenskiObjekat{
         this.grupa = grupa;
     }
 
+    
+    /**
+     * Metoda koja vraća grupu kojoj član pripada.
+     * 
+     * @return Grupa kojoj član pripada kao objekat klase Grupa.
+     */
     public Grupa getGrupa() {
         return grupa;
     }
 
+    
+    /**
+     * Metoda koja postavlja grupu kojoj član pripada.
+     * 
+     * @param grupa Grupa kojoj član pripada kao objekat klase Grupa.
+     * @throws NullPointerException ako je grupa null.
+     */
     public void setGrupa(Grupa grupa) {
     	if(grupa==null) {
     		throw new NullPointerException("Grupa ne sme biti null");
@@ -60,10 +135,23 @@ public class Clan implements OpstiDomenskiObjekat{
         this.grupa = grupa;
     }
 
+    
+    /**
+     * Metoda koja vraća ID člana.
+     * 
+     * @return ID člana kao int.
+     */
     public int getClanID() {
         return clanID;
     }
 
+    
+    /**
+     * Metoda koja postavlja ID člana.
+     * 
+     * @param clanID ID člana kao int.
+     * @throws IllegalArgumentException ako je clanID manji od 1.
+     */
     public void setClanID(int clanID) {
     	if(clanID<1) {
     		throw new IllegalArgumentException("ClanId ne sme biti manji od jedan");
@@ -71,10 +159,23 @@ public class Clan implements OpstiDomenskiObjekat{
         this.clanID = clanID;
     }
 
+    
+    /**
+     * Metoda koja vraća ime člana.
+     * 
+     * @return Ime člana kao String.
+     */
     public String getIme() {
         return ime;
     }
 
+    
+    /**
+     * Metoda koja postavlja ime člana.
+     * 
+     * @param ime Ime člana kao String.
+     * @throws NullPointerException ako je ime null.
+     */
     public void setIme(String ime) {
     	if(ime==null) {
     		throw new NullPointerException("Ime ne sme biti null");
@@ -82,10 +183,23 @@ public class Clan implements OpstiDomenskiObjekat{
         this.ime = ime;
     }
 
+    
+    /**
+     * Metoda koja vraća prezime člana.
+     * 
+     * @return Prezime člana kao String.
+     */
     public String getPrezime() {
         return prezime;
     }
 
+    
+    /**
+     * Metoda koja postavlja prezime člana.
+     * 
+     * @param prezime Prezime člana kao String.
+     * @throws NullPointerException ako je prezime null.
+     */
     public void setPrezime(String prezime) {
     	if(prezime==null) {
     		throw new NullPointerException("Prezime ne sme biti null");
@@ -93,10 +207,23 @@ public class Clan implements OpstiDomenskiObjekat{
         this.prezime = prezime;
     }
 
+    
+    /**
+     * Metoda koja vraća datum rođenja člana.
+     * 
+     * @return Datum rođenja člana kao java.util.Date.
+     */
     public Date getDatumRodjenja() {
         return datumRodjenja;
     }
 
+    
+    /**
+     * Metoda koja postavlja datum rođenja člana.
+     * 
+     * @param datumRodjenja Datum rođenja člana kao java.util.Date.
+     * @throws IllegalArgumentException ako je datumRodjenja posle današnjeg datuma.
+     */
     public void setDatumRodjenja(Date datumRodjenja) {
     	if(datumRodjenja.after(new Date())) {
     		throw new IllegalArgumentException("Datum rodjenja ne sme biti posle danasnjeg datuma");
@@ -104,10 +231,23 @@ public class Clan implements OpstiDomenskiObjekat{
         this.datumRodjenja = datumRodjenja;
     }
 
+    
+    /**
+     * Metoda koja vraća adresu člana.
+     * 
+     * @return Adresa člana kao String.
+     */
     public String getAdresa() {
         return adresa;
     }
 
+    
+    /**
+     * Metoda koja postavlja adresu člana.
+     * 
+     * @param adresa Adresa člana kao String.
+     * @throws NullPointerException ako je adresa null.
+     */
     public void setAdresa(String adresa) {
     	if(adresa==null) {
     		throw new NullPointerException("Adresa ne sme biti null");
@@ -115,10 +255,24 @@ public class Clan implements OpstiDomenskiObjekat{
         this.adresa = adresa;
     }
 
+    
+    /**
+     * Metoda koja vraća broj telefona člana.
+     * 
+     * @return Broj telefona člana kao String.
+     */
     public String getBrojTelefona() {
         return brojTelefona;
     }
 
+    
+    /**
+     * Metoda koja postavlja broj telefona člana.
+     * 
+     * @param brojTelefona Broj telefona člana kao String.
+     * @throws NullPointerException ako je brojTelefona null.
+     * @throws IllegalArgumentException ako brojTelefona nije u formatu za Republiku Srbiju (počinje sa +381 i ima 8 ili 9 cifara).
+     */
     public void setBrojTelefona(String brojTelefona) {
     	if(brojTelefona==null) {
     		throw new NullPointerException("Broj telefona ne sme biti null");
@@ -131,10 +285,23 @@ public class Clan implements OpstiDomenskiObjekat{
         this.brojTelefona = brojTelefona;
     }
 
+    
+    /**
+     * Metoda koja vraća grad odakle je član.
+     * 
+     * @return Grad odakle je član kao objekat klase Grad.
+     */
     public Grad getGrad() {
         return grad;
     }
 
+    
+    /**
+     * Metoda koja postavlja grad odakle je član.
+     * 
+     * @param grad Grad odakle je član kao objekat klase Grad.
+     * @throws NullPointerException ako je grad null.
+     */
     public void setGrad(Grad grad) {
     	if(grad==null) {
     		throw new NullPointerException("Grad ne sme biti null");
@@ -142,12 +309,29 @@ public class Clan implements OpstiDomenskiObjekat{
         this.grad = grad;
     }
 
+    
+    /**
+     * Metoda koja vraća String koji predstavlja ime i prezime člana.
+     * 
+     * @return Ime i prezime člana kao String.
+     */
     @Override
     public String toString() {
         return ime+" "+prezime;
     }
 
 
+    
+    /**
+     * Metoda koja poredi dva člana po njihovom ID-u i vraća true ili false.
+     * 
+     * @param obj Objekat sa kojim se vrši upoređivanje.
+     * @return
+     * <ul>
+     * <li>true - ako su oba objekta klase Clan i imaju isti ID.</li>
+     * <li>false - u svim ostalim slučajevima.</li>
+     * </ul>
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

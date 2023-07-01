@@ -13,26 +13,74 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
- * @author HP
- */
+*
+* Klasa koja predstavlja stavku treninga.
+* 
+* Ova klasa implementira interfejs OpstiDomenskiObjekat u odnosu na tabelu stavkatreninga u bazi.
+* 
+* Stavka treninga ima svoj redni broj stavke koji je njen identifikator, kao i atribute koji opisuju stavku treninga, kao što su broj ponavljanja, težina, trajanje i vežba.
+* Stavka treninga takođe ima referencu na trening kojem pripada.
+*
+* @author HP
+* @version 1.1.0
+* 
+*/
 public class StavkaTreninga implements OpstiDomenskiObjekat{
     
-    
+    /**
+     * Redni broj stavke treninga kao int.
+     */
     private int rbStavke;
+    
+    /**
+     * Trening kojem pripada stavka treninga kao objekat klase Trening.
+     */
     private Trening trening;
+    
+    /**
+     * Broj ponavljanja stavke treninga kao int.
+     */
     private int brojPonavljanja;
+    
+    /**
+     * Težina stavke treninga kao String.
+     */
     private String tezina;
+    
+    /**
+     * Trajanje stavke treninga u minutima kao int.
+     */
     private int trajanje;
+    
+    /**
+     * Vežba koja se izvodi u  okviru stavke treninga kao objekat klase Vezba.
+     */
     private Vezba vezba;
 
+    /**
+     * Konstruktor koji inicijalizuje objekat klase StavkaTreninga.
+     */
     public StavkaTreninga() {
     }
     
+    /**
+     * Konstruktor koji inicijalizuje objekat klase StavkaTreninga sa referencom na trening.
+     * @param trening Trening kojem pripada stavka treninga.
+     */
     public StavkaTreninga(Trening trening){
         this.trening=trening;
     }
 
+    
+    /**
+     * Konstruktor koji inicijalizuje objekat klase StavkaTreninga sa svim atributima.
+     * @param rbStavke Redni broj stavke treninga kao int.
+     * @param trening Trening kojem pripada stavka treninga kao objekat klase Trening.
+     * @param brojPonavljanja Broj ponavljanja stavke treninga kao int.
+     * @param tezina Težina stavke treninga kao String.
+     * @param trajanje Trajanje stavke treninga u minutima kao int.
+     * @param vezba Vežba koja se izvodi u okviru stavke treninga kao objekat klase Vezba.
+     */
     public StavkaTreninga(int rbStavke, Trening trening, int brojPonavljanja, String tezina, int trajanje, Vezba vezba) {
         this.rbStavke = rbStavke;
         this.trening = trening;
@@ -42,10 +90,19 @@ public class StavkaTreninga implements OpstiDomenskiObjekat{
         this.vezba = vezba;
     }
 
+    /**
+     * Metoda koja vraća vežbu koja se izvodi u okviru stavke treninga.
+     * @return Vežba koja se izvodi u okviru stavke treninga kao objekat klase Vezba.
+     */
     public Vezba getVezba() {
         return vezba;
     }
 
+    /**
+     * Metoda koja postavlja vežbu koja se izvodi u okviru stavke treninga.
+     * @param vezba Vežba koja se izvodi u okviru stavki treninga kao objekat klase Vezba.
+     * @throws NullPointerException ako je vežba null.
+     */
     public void setVezba(Vezba vezba) {
     	if(vezba==null) {
     		throw new NullPointerException("Vezba ne sme biti null");
@@ -53,10 +110,19 @@ public class StavkaTreninga implements OpstiDomenskiObjekat{
         this.vezba = vezba;
     }
 
+    /**
+     * Metoda koja vraća redni broj stavke treninga.
+     * @return Redni broj stavke treninga kao int.
+     */
     public int getRbStavke() {
         return rbStavke;
     }
 
+    /**
+     * Metoda koja postavlja redni broj stavke treninga.
+     * @param rbStavke Redni broj stavke treninga kao int.
+     * @throws IllegalArgumentException ako je redni broj stavke manji od 1.
+     */
     public void setRbStavke(int rbStavke) {
     	if(rbStavke<1) {
     		throw new IllegalArgumentException("Redni broj stavke ne sme biti manji od jedan");
@@ -64,10 +130,20 @@ public class StavkaTreninga implements OpstiDomenskiObjekat{
         this.rbStavke = rbStavke;
     }
 
+    /**
+     * Metoda koja vraća trening kojem pripada stavka treninga.
+     * @return Trening kojem pripada stavka treninga kao objekat klase Trening.
+     */
     public Trening getTrening() {
         return trening;
     }
 
+    
+    /**
+     * Metoda koja postavlja trening kojem pripada stavka treninga.
+     * @param trening Trening kojem pripada stavka treninga kao objekat klase Trening.
+     * @throws NullPointerException ako je trening null.
+     */
     public void setTrening(Trening trening) {
     	if(trening==null) {
     		throw new NullPointerException("Trening ne sme biti null");
@@ -75,10 +151,21 @@ public class StavkaTreninga implements OpstiDomenskiObjekat{
         this.trening = trening;
     }
 
+    
+    /**
+     * Metoda koja vraća broj ponavljanja stavke treninga.
+     * @return Broj ponavljanja stavke treninga kao int.
+     */
     public int getBrojPonavljanja() {
         return brojPonavljanja;
     }
 
+    
+    /**
+     * Metoda koja postavlja broj ponavljanja stavke treninga.
+     * @param brojPonavljanja Broj ponavljanja stavke treninga kao int.
+     * @throws IllegalArgumentException ako je broj ponavljanja manji od 1.
+     */
     public void setBrojPonavljanja(int brojPonavljanja) {
     	if(brojPonavljanja<1) {
     		throw new IllegalArgumentException("Broj ponavljanja ne sme biti manji od jedan");
@@ -86,10 +173,20 @@ public class StavkaTreninga implements OpstiDomenskiObjekat{
         this.brojPonavljanja = brojPonavljanja;
     }
 
+    /**
+     * Metoda koja vraća težinu stavke treninga.
+     * @return Težina stavke treninga kao String.
+     */
     public String getTezina() {
         return tezina;
     }
 
+    /**
+     * Metoda koja postavlja težinu stavke treninga.
+     * @param tezina Težina stavke treninga kao String.
+     * @throws NullPointerException ako je težina null.
+     * @throws IllegalArgumentException ako težina nije "lako", "srednje" ili "teško".
+     */
     public void setTezina(String tezina) {
     	if(tezina==null) {
     		throw new NullPointerException("Tezina ne sme biti null");
@@ -100,10 +197,19 @@ public class StavkaTreninga implements OpstiDomenskiObjekat{
         this.tezina = tezina;
     }
 
+    /**
+     * Metoda koja vraća trajanje stavke treninga u minutima.
+     * @return Trajanje stavke treninga u minutima kao int.
+     */
     public int getTrajanje() {
         return trajanje;
     }
 
+    /**
+     * Metoda koja postavlja trajanje stavke treninga u minutima.
+     * @param trajanje Trajanje stavke treninga u minutima kao int.
+     * @throws IllegalArgumentException ako je trajanje manje od 0.
+     */
     public void setTrajanje(int trajanje) {
     	if(trajanje<0) {
     		throw new IllegalArgumentException("Trajanje ne sme biti manje od nula");
@@ -111,7 +217,17 @@ public class StavkaTreninga implements OpstiDomenskiObjekat{
         this.trajanje = trajanje;
     }
 
-    
+
+    /**
+     * Metoda koja vrši poređenje dve stavke treninga na osnovu njihovog rednog broja i treninga kojem pripadaju.
+     * 
+     * @param obj Objekat sa kojim se vrši poređenje.
+     * @return
+     * <ul>
+     * <li>true - ako su oba objekta klase StavkaTreninga, imaju isti redni broj i pripadaju istom treningu.</li>
+     * <li>false - u svim ostalim slučajevima.</li>
+     * </ul>
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
