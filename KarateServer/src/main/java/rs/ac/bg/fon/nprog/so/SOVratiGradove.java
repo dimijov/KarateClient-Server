@@ -51,6 +51,7 @@ public class SOVratiGradove extends OpstaSO {
      /**
      * Metoda u kojoj se poziva operacija za vracanje svih gradova iz baze podataka.
      * Rezultat operacije su gradovi sa svim podacima.
+     * @throws ServerskiException Ukoliko dođe do greške prilikom izvršavanja operacije.
      */
     @Override
     protected void izvrsiKonkretnuOperaciju() throws ServerskiException {

@@ -53,6 +53,7 @@ public class SOVratiSale extends OpstaSO {
      /**
       * Metoda u kojoj se poziva operacija za vracanje svih sala iz baze podataka.
       * Rezultat operacije su sale sa svim podacima.
+      * @throws ServerskiException Ukoliko dođe do greške prilikom izvršavanja operacije.
       */
     @Override
     protected void izvrsiKonkretnuOperaciju() throws ServerskiException {

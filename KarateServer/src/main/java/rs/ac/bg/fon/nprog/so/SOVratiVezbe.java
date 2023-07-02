@@ -50,6 +50,7 @@ public class SOVratiVezbe extends OpstaSO {
     /**
      * Metoda u kojoj se poziva operacija za vracanje svih vežbi iz baze podataka.
      * Rezultat operacije su vežbe sa svim podacima.
+     * @throws ServerskiException Ukoliko dođe do greške prilikom izvršavanja operacije.
      */
 	@Override
     protected void izvrsiKonkretnuOperaciju() throws ServerskiException {

@@ -50,6 +50,7 @@ public class SOVratiGrupe extends OpstaSO {
      /**
       * Metoda u kojoj se poziva operacija za vracanje svih grupa iz baze podataka.
       * Rezultat operacije su grupe sa svim podacima.
+      * @throws ServerskiException Ukoliko dođe do greške prilikom izvršavanja operacije.
       */
     @Override
     protected void izvrsiKonkretnuOperaciju() throws ServerskiException {
