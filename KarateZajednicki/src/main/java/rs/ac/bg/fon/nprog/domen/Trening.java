@@ -53,7 +53,7 @@ public class Trening implements OpstiDomenskiObjekat {
     private int trajanje;
     
     /**
-     * Lista stavki koje čine StavkaTreninga kao List<OpstiDomenskiObjekat>.
+     * Lista stavki koje čine StavkaTreninga kao List.
      */
     private List<OpstiDomenskiObjekat> listaStavki;
     

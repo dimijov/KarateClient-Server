@@ -293,7 +293,7 @@ public class Trener implements OpstiDomenskiObjekat {
     
     /**
      * Metoda koja postavlja indikator da li je trener ulogovan ili ne.
-     * @param  boolean Indikator da li je trener ulogovan.
+     * @param ulogovan boolean Indikator da li je trener ulogovan.
      * <ul>
 	 * <li>true - Ako je trener ulogovan na sistem </li>
 	 * <li>false - Ako trener nije ulogovan ja sistem </li>
@@ -306,7 +306,7 @@ public class Trener implements OpstiDomenskiObjekat {
     
     /**
      * Metoda koja vraca indikator da li je trener ulogovan ili ne.
-     * @return boolean Indikator da li je trener ulogovan.
+     * @return  boolean Indikator da li je trener ulogovan.
      * <ul>
 	 * <li>true - Ako je trener ulogovan na sistem </li>
 	 * <li>false - Ako trener nije ulogovan ja sistem </li>

@@ -69,7 +69,6 @@ public interface OpstiDomenskiObjekat extends Serializable {
      *
      * @param rs Objekat koji sadrzi podatke iz baze podataka nakon izvrsavanja upita.
      * @return Lista objekata ucitanih na osnovu vrednosti u bazi podataka nakon izvrsavanja upita.
-     * @throws SQLException ako dodje do greske prilikom ucitavanja podataka iz baze.
      */
     public List<OpstiDomenskiObjekat> RSuTabelu(ResultSet rs);
     
