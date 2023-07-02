@@ -38,7 +38,7 @@ public abstract class OpstaSO {
     
     /**
      * Konstruktor koji prima postojeći objekat klase DBBroker.
-     * @param dbb
+     * @param dbb Objekat klase DBBroker za komunikaciju sa bazom podataka.
      */
     public OpstaSO(DBBroker dbb) {
     	this.dbb=dbb;
