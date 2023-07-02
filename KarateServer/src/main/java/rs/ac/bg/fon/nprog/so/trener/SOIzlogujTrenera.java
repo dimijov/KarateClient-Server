@@ -11,17 +11,37 @@ import rs.ac.bg.fon.nprog.kontroler.Kontroler;
 import rs.ac.bg.fon.nprog.so.OpstaSO;
 
 /**
- *
+ * Klasa koja predstavlja sistemsku operaciju za odjavljivanje trenera sa sistema.
+ * 
+ * Klasa nasleđuje OpstaSO koja predstavlja apstraktnu sistemsku operaciju.
+ * 
  * @author HP
+ * @version 1.0.0
  */
 public class SOIzlogujTrenera extends OpstaSO {
     
+	/**
+     * Trener koji se odjavljuje sa sistema.
+     */
     private OpstiDomenskiObjekat trener;
 
+    
+    /**
+     * Konstruktor koji prima trenera koji se odjavljuje sa sistema.
+     * 
+     * @param trener Trener koji se odjavljuje sa sistema.
+     */
     public SOIzlogujTrenera(OpstiDomenskiObjekat trener) {
         this.trener = trener;
     }
 
+    
+    /**
+     * Metoda u kojoj se izvršava operacija odjavljivanja trenera sa sistema.
+     * Postavlja se vrednost atributa "ulogovan" trenera na false.
+     * 
+     * @throws ServerskiException Ukoliko dođe do greške prilikom izvršavanja operacije.
+     */
     @Override
     protected void izvrsiKonkretnuOperaciju() throws ServerskiException {
         int indeks = Kontroler.vratiInstancu().getListaKorisnika().indexOf(trener);
@@ -30,10 +50,21 @@ public class SOIzlogujTrenera extends OpstaSO {
         }
     }
 
+    
+    /**
+     * Metoda koja vraca trenera koji se odjavljuje sa sistema.
+     * 
+     * @return Trener koji se odjavljuje sa sistema.
+     */
     public OpstiDomenskiObjekat getTrener() {
         return trener;
     }
 
+    /**
+     * Metoda koja postavlja prosledjenog trenera koji se odjavljuje sa sistema.
+     * 
+     * @param trener Trener koji se odjavljuje sa sistema.
+     */
     public void setTrener(OpstiDomenskiObjekat trener) {
         this.trener = trener;
     }
