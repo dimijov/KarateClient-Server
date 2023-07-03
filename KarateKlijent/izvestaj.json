@@ -1,0 +1,14 @@
+{
+  "prijaveTrenera": [
+    {
+      "trener": "Dimitrije Jovanovic",
+      "datumVreme": "2023-07-03 02:39:15"
+    }
+  ],
+  "odjaveTrenera": [
+    {
+      "trener": "Dimitrije Jovanovic",
+      "datumVreme": "2023-07-03 02:40:05"
+    }
+  ]
+}

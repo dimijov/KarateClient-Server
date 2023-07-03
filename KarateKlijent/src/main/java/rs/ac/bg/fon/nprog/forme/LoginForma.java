@@ -7,12 +7,16 @@ package rs.ac.bg.fon.nprog.forme;
 
 import java.io.IOException;
 import java.net.Socket;
+import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 import rs.ac.bg.fon.nprog.domen.Trener;
 import rs.ac.bg.fon.nprog.exception.ServerskiException;
+import rs.ac.bg.fon.nprog.json.reports.JsonReport;
 import rs.ac.bg.fon.nprog.komunikacija.KomunikacijaSaServerom;
 import rs.ac.bg.fon.nprog.kontroler.Kontroler;
 
@@ -164,6 +168,14 @@ public class LoginForma extends javax.swing.JFrame {
             GlavnaKlijentskaForma glavna = new GlavnaKlijentskaForma();
             JOptionPane.showMessageDialog(rootPane, "Uspešno ste se prijavili", "Info", JOptionPane.INFORMATION_MESSAGE);
             glavna.setUlogovaniTrener(trener);
+            
+            /*
+             * IZMENE ZA JSON DODAJE SE VREME PRIJAVE TRENERA U MAPU PRIJAVA
+             */
+            Map<Trener, LocalDateTime> prijaveTrenera = new HashMap<>();
+            prijaveTrenera.put(trener, LocalDateTime.now());
+            JsonReport.setPrijaveTrenera(prijaveTrenera);
+            //
             glavna.setVisible(true);
             this.dispose();
         } catch (ServerskiException ex) {

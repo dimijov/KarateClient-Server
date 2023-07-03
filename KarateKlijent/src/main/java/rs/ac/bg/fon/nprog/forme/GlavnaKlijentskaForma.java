@@ -5,6 +5,9 @@
 package rs.ac.bg.fon.nprog.forme;
 
 
+import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -13,6 +16,7 @@ import rs.ac.bg.fon.nprog.forme.clan.DodajClana;
 import rs.ac.bg.fon.nprog.forme.clan.PretragaClana;
 import rs.ac.bg.fon.nprog.forme.trening.DodajTrening;
 import rs.ac.bg.fon.nprog.forme.trening.PretragaTrening;
+import rs.ac.bg.fon.nprog.json.reports.JsonReport;
 import rs.ac.bg.fon.nprog.kontroler.Kontroler;
 
 
@@ -300,6 +304,16 @@ public class GlavnaKlijentskaForma extends javax.swing.JFrame {
 
     private void izlogujSe() {
         try {
+        	/*
+        	 *  DODAJE SE VREME ODJAVE TRENERA U MAPU ODJAVA
+        	 */
+            Map<Trener, LocalDateTime> odjaveTrenera = new HashMap<>();
+            odjaveTrenera.put(ulogovaniTrener, LocalDateTime.now());
+            JsonReport.setOdjaveTrenera(odjaveTrenera);
+
+            JsonReport.generateReport(); 
+            //GENERISANJE IZVESTAJA
+        	
             Kontroler.vratiInstancu().izlogujTrening(ulogovaniTrener);
         } catch (Exception ex) {
             Logger.getLogger(GlavnaKlijentskaForma.class.getName()).log(Level.SEVERE, null, ex);
