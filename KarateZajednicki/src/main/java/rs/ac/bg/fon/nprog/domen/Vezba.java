@@ -60,7 +60,7 @@ public class Vezba implements OpstiDomenskiObjekat {
      * @param vezbaID ID vezbe kao int.
      */
     public Vezba(int vezbaID) {
-        this.vezbaID = vezbaID;
+       setVezbaID(vezbaID);
     }
 
     
@@ -73,10 +73,10 @@ public class Vezba implements OpstiDomenskiObjekat {
      * @param duzina Trajanje vezbe u minutima kao int.
      */
     public Vezba(int vezbaID, String naziv, String opis,int duzina) {
-        this.vezbaID = vezbaID;
-        this.naziv = naziv;
-        this.opis = opis;
-        this.duzina=duzina;
+        setVezbaID(vezbaID);
+        setNaziv(naziv);
+        setOpis(opis);
+        setDuzina(duzina);
     }
 
     

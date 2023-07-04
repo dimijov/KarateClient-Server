@@ -86,7 +86,8 @@ public class Trening implements OpstiDomenskiObjekat {
      * @param treningID ID treninga kao int.
      */
     public Trening(int treningID) {
-        this.treningID = treningID;
+       setTreningID(treningID);
+       this.listaStavki = new ArrayList<>();
     }
 
     
@@ -102,14 +103,14 @@ public class Trening implements OpstiDomenskiObjekat {
      * @param sala Sala u kojoj se trening održava kao objekat klase Sala.
      */
     public Trening(int treningID, String naziv, Date datumVreme, int trajanje, Trener trener, Grupa grupa, Sala sala) {
-        this.treningID = treningID;
-        this.naziv = naziv;
-        this.datumVreme = datumVreme;
-        this.trajanje = trajanje;
-        this.trener = trener;
+        setTreningID(treningID);
+        setNaziv(naziv);
+        setDatumVreme(datumVreme);
+        setTrajanje(trajanje);
+        setTrener(trener);
+        setGrupa(grupa);
+        setSala(sala);
         this.listaStavki = new ArrayList<>();
-        this.grupa = grupa;
-        this.sala = sala;
     }
 
     
@@ -154,8 +155,8 @@ public class Trening implements OpstiDomenskiObjekat {
      * @throws IllegalArgumentException ako je treningID manji od 1.
      */
     public void setTreningID(int treningID) {
-    	if(treningID<1) {
-    		throw new IllegalArgumentException("TreningId ne sme biti manji od jedan");
+    	if(treningID<0) {
+    		throw new IllegalArgumentException("TreningId ne sme biti manji od 0");
     	}
         this.treningID = treningID;
     }

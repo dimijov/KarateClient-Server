@@ -222,7 +222,7 @@ class StavkaTreningaTest {
 		st2.setBrojPonavljanja(5);
 		st2.setTezina("srednje");
 		st2.setTrajanje(10);
-		st2.setVezba(new Vezba(1));
+		st2.setVezba(new Vezba(1, "Dojo", "Koreografija", 5));
 		List<OpstiDomenskiObjekat> lista2=new ArrayList<>();
 		lista2.add(st2);
 
@@ -239,6 +239,9 @@ class StavkaTreningaTest {
 		Mockito.when(rs.getString("tezina")).thenReturn("srednje");
 		Mockito.when(rs.getInt("trajanje")).thenReturn(10);
 		Mockito.when(rs.getInt("vezbaID")).thenReturn(1);
+		Mockito.when(rs.getString("naziv")).thenReturn("Dojo");
+		Mockito.when(rs.getString("opis")).thenReturn("Koreografija");
+		Mockito.when(rs.getInt("duzina")).thenReturn(5);
     }
 	
 	

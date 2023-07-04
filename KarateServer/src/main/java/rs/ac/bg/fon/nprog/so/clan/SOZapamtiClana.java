@@ -38,7 +38,7 @@ public class SOZapamtiClana extends OpstaSO {
      */
     public SOZapamtiClana(OpstiDomenskiObjekat param){
     	super();
-        this.param=param;
+        setParam(param);
     }
     
     /**

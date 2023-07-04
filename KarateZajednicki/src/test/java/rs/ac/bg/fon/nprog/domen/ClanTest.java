@@ -94,8 +94,8 @@ class ClanTest {
 	}
 	
 	@Test
-	void testClansetClanIDnula() {
-		assertThrows(java.lang.IllegalArgumentException.class, ()->c.setClanID(0));
+	void testClansetClanIDNegatice() {
+		assertThrows(java.lang.IllegalArgumentException.class, ()->c.setClanID(-1));
 	}
 	
 	@Test
@@ -267,6 +267,9 @@ class ClanTest {
 		Mockito.when(rs.getString("brojTelefona")).thenReturn("+381655493583");
 		Mockito.when(rs.getInt("gradID")).thenReturn(1);
 		Mockito.when(rs.getInt("grupaID")).thenReturn(1);
+		Mockito.when(rs.getString("nazivGrada")).thenReturn("Beograd");
+		Mockito.when(rs.getString("nazivGrupe")).thenReturn("Pocetnici");
+		Mockito.when(rs.getInt("postanskiBroj")).thenReturn(11000);
     }
 	
 	

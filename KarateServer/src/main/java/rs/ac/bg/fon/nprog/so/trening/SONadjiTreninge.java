@@ -43,7 +43,7 @@ public class SONadjiTreninge extends OpstaSO {
      */
     public SONadjiTreninge(Trening trening) {
     	super();
-        this.trening = trening;
+        setTrening(trening);
     }
     
     

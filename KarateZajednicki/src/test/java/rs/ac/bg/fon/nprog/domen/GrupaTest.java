@@ -66,8 +66,8 @@ class GrupaTest {
 	}
 	
 	@Test
-	void testGrupasetGrupaIdNula() {
-		assertThrows(IllegalArgumentException.class,()->g.setGrupaID(0));
+	void testGrupasetGrupaIdNegative() {
+		assertThrows(IllegalArgumentException.class,()->g.setGrupaID(-1));
 	}
 	
 	@Test

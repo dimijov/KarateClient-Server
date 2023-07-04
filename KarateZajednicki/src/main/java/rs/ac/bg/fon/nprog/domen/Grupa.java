@@ -48,7 +48,7 @@ public class Grupa implements OpstiDomenskiObjekat{
      * @param grupaID ID grupe kao int.
      */
     public Grupa(int grupaID) {
-        this.grupaID = grupaID;
+        setGrupaID(grupaID);
     }
     
     
@@ -58,8 +58,8 @@ public class Grupa implements OpstiDomenskiObjekat{
      * @param naziv Naziv grupe kao String.
      */
     public Grupa(int grupaID, String naziv) {
-        this.grupaID = grupaID;
-        this.naziv = naziv;
+        setGrupaID(grupaID);
+        setNaziv(naziv);
     }
 
     
@@ -98,8 +98,8 @@ public class Grupa implements OpstiDomenskiObjekat{
      * @throws IllegalArgumentException ako je grupaID manji od 1.
      */
     public void setGrupaID(int grupaID) {
-    	if(grupaID<1) {
-    		throw new IllegalArgumentException("GrupaId ne sme biti manja od jedan");
+    	if(grupaID<0) {
+    		throw new IllegalArgumentException("GrupaId ne sme biti manja od nula");
     	}
         this.grupaID = grupaID;
     }

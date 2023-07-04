@@ -55,7 +55,7 @@ public class Grad implements OpstiDomenskiObjekat{
      * @param gradID ID grada kao int.
      */
     public Grad(int gradID) {
-        this.gradID = gradID;
+        setGradID(gradID);
     }
 
     
@@ -67,9 +67,9 @@ public class Grad implements OpstiDomenskiObjekat{
      * @param postanskiBroj Postanski broj grada kao int.
      */
     public Grad(int gradID, String naziv, int postanskiBroj) {
-        this.gradID = gradID;
-        this.naziv = naziv;
-        this.postanskiBroj = postanskiBroj;
+        setGradID(gradID);
+        setNaziv(naziv);;
+        setPostanskiBroj(postanskiBroj);
     }
 
     
@@ -102,8 +102,8 @@ public class Grad implements OpstiDomenskiObjekat{
      * @throws IllegalArgumentException ako je gradID manji od 1.
      */
     public void setGradID(int gradID) {
-    	if(gradID<1) {
-    		throw new IllegalArgumentException("GradId ne sme biti manji od jedan");
+    	if(gradID<0) {
+    		throw new IllegalArgumentException("GradId ne sme biti manji od nula");
     	}
         this.gradID = gradID;
     }

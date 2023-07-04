@@ -56,7 +56,7 @@ public class Sala implements OpstiDomenskiObjekat {
      * @param salaID ID sale kao int.
      */
     public Sala(int salaID) {
-        this.salaID = salaID;
+    	setSalaID(salaID);
     }
 
     
@@ -68,9 +68,9 @@ public class Sala implements OpstiDomenskiObjekat {
      * @param kapacitet Kapacitet sale kao int.
      */
     public Sala(int salaID, String naziv, int kapacitet) {
-        this.salaID = salaID;
-        this.naziv = naziv;
-        this.kapacitet = kapacitet;
+        setSalaID(salaID);
+        setNaziv(naziv);
+        setKapacitet(kapacitet);
     }
 
     
@@ -115,8 +115,8 @@ public class Sala implements OpstiDomenskiObjekat {
      * @throws IllegalArgumentException ako je salaID manji od 1.
      */
     public void setSalaID(int salaID) {
-    	if(salaID<1) {
-    		throw new IllegalArgumentException("SalaId ne sme biti manje od jedan");
+    	if(salaID<0) {
+    		throw new IllegalArgumentException("SalaId ne sme biti manje od nula");
     	}
         this.salaID = salaID;
     }

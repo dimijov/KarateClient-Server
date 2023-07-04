@@ -68,7 +68,7 @@ public class StavkaTreninga implements OpstiDomenskiObjekat{
      * @param trening Trening kojem pripada stavka treninga.
      */
     public StavkaTreninga(Trening trening){
-        this.trening=trening;
+        setTrening(trening);
     }
 
     
@@ -82,12 +82,12 @@ public class StavkaTreninga implements OpstiDomenskiObjekat{
      * @param vezba Vežba koja se izvodi u okviru stavke treninga kao objekat klase Vezba.
      */
     public StavkaTreninga(int rbStavke, Trening trening, int brojPonavljanja, String tezina, int trajanje, Vezba vezba) {
-        this.rbStavke = rbStavke;
-        this.trening = trening;
-        this.brojPonavljanja = brojPonavljanja;
-        this.tezina = tezina;
-        this.trajanje = trajanje;
-        this.vezba = vezba;
+        setRbStavke(rbStavke);
+        setTrening(trening);
+        setBrojPonavljanja(brojPonavljanja);
+        setTezina(tezina);
+        setTrajanje(trajanje);
+        setVezba(vezba);
     }
 
     /**

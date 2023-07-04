@@ -41,7 +41,7 @@ public class SONadjiClanove extends OpstaSO {
      * @param clan Član karate kluba na osnovu kojeg se vrši pretraga.
      */
     public SONadjiClanove(Clan clan) {
-        this.clan = clan;
+        setClan(clan);
     }
     
     /**

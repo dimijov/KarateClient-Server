@@ -43,7 +43,7 @@ public class SOVratiTreninge extends OpstaSO {
     public SOVratiTreninge(OpstiDomenskiObjekat ulogovani) {
     	super();
         listaTreninga = new ArrayList<>();
-        this.ulogovani=ulogovani;
+        setUlogovani(ulogovani);
     }
     
     

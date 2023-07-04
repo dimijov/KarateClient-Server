@@ -51,7 +51,7 @@ class TreningTest {
 		assertEquals(null,t.getSala());
 		assertEquals(null,t.getGrupa());
 		assertEquals(null,t.getTrener());
-		assertEquals(null,t.getListaStavki());
+		assertEquals(new ArrayList<>(),t.getListaStavki());
 
 	}
 	
@@ -100,7 +100,7 @@ class TreningTest {
 	
 	@Test
 	void testTreningsetTreningIdNula() {
-		assertThrows(IllegalArgumentException.class,()->t.setTreningID(0));
+		assertThrows(IllegalArgumentException.class,()->t.setTreningID(-1));
 	}
 	
 	@Test
@@ -238,14 +238,14 @@ class TreningTest {
 		Trening t1=new Trening();
 		List<OpstiDomenskiObjekat> lista1=t1.RSuTabelu(rs);
 
-		Trening t2=new Trening();
-		t2.setTreningID(1);
+		Trening t2=new Trening(1);
 		t2.setNaziv("lenj");
 		t2.setDatumVreme(new Date(123, 6, 27, 13, 30, 0));
 		t2.setTrajanje(50);
-		t2.setTrener(new Trener(1));
-		t2.setGrupa(new Grupa(1));
-		t2.setSala(new Sala(1));
+		t2.setTrener(new Trener(0, "A", "B", 2, "crni", "aa", "bb"));
+		t2.setGrupa(new Grupa(1,"Pocetnici"));
+		t2.setSala(new Sala(1,"Dojo",20));
+		t2.getListaStavki().add(new StavkaTreninga(1, t2, 1, "lako", 5, new Vezba(1, "Dojo", "Koreografija", 5)));
 		List<OpstiDomenskiObjekat> lista2=new ArrayList<>();
 		lista2.add(t2);
 
@@ -260,9 +260,32 @@ class TreningTest {
 		Mockito.when(rs.getString("nazivTreninga")).thenReturn("lenj");
 		Mockito.when(rs.getInt("trajanje")).thenReturn(50);
 		Mockito.when(rs.getTimestamp("datumVreme")).thenReturn(new java.sql.Timestamp(123, 6, 27, 13, 30, 0, 0));
+		
 		Mockito.when(rs.getInt("trenerID")).thenReturn(1);
+		Mockito.when(rs.getString("ime")).thenReturn("A");
+		Mockito.when(rs.getString("prezime")).thenReturn("B");
+		Mockito.when(rs.getInt("godineIskustva")).thenReturn(2);
+		Mockito.when(rs.getString("pojas")).thenReturn("crni");
+		Mockito.when(rs.getString("username")).thenReturn("aa");
+		Mockito.when(rs.getString("password")).thenReturn("bb");
+		
 		Mockito.when(rs.getInt("grupaID")).thenReturn(1);
+		Mockito.when(rs.getString("nazivGrupe")).thenReturn("Pocetnici");
+		
 		Mockito.when(rs.getInt("salaID")).thenReturn(1);
+		Mockito.when(rs.getString("nazivSale")).thenReturn("Dojo");
+		Mockito.when(rs.getInt("kapacitet")).thenReturn(20);
+		
+		
+		Mockito.when(rs.getInt("rbStavke")).thenReturn(1);
+		Mockito.when(rs.getInt("brojPonavljanja")).thenReturn(1);
+		Mockito.when(rs.getString("tezina")).thenReturn("lako");
+		Mockito.when(rs.getInt("trajanjeStavke")).thenReturn(5);
+		
+		Mockito.when(rs.getInt("vezbaID")).thenReturn(1);
+		Mockito.when(rs.getString("nazivVezbe")).thenReturn("Dojo");
+		Mockito.when(rs.getString("opis")).thenReturn("Koreografija");
+		Mockito.when(rs.getInt("duzina")).thenReturn(5);	
     }
 	
 

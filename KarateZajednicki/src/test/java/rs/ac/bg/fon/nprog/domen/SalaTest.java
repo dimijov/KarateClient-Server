@@ -68,8 +68,8 @@ class SalaTest {
 	}
 	
 	@Test
-	void testSalasetSalaIdNula() {
-		assertThrows(IllegalArgumentException.class,()->s.setSalaID(0));
+	void testSalasetSalaIdNegative() {
+		assertThrows(IllegalArgumentException.class,()->s.setSalaID(-1));
 	}
 	
 	@Test

@@ -47,7 +47,8 @@ public class DodajClana extends javax.swing.JFrame {
         popuniCBGrad();
         popuniCBGrupa();
         this.glavnaForma = glavna;
-        clan = new Clan(0, "", "", null, "", "", null, null);
+        //clan = new Clan(0, "", "", null, "", "", null, null);
+        clan=new Clan(0);
         txtClanID.setEnabled(false);
         this.status= "unos";
     }

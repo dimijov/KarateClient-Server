@@ -84,7 +84,7 @@ public class Clan implements OpstiDomenskiObjekat{
      * @param clanID ID člana kao int.
      */
     public Clan(int clanID) {
-        this.clanID = clanID;
+    	setClanID(clanID);
     }
 
     
@@ -101,14 +101,14 @@ public class Clan implements OpstiDomenskiObjekat{
      * @param grupa Grupa kojoj član pripada kao objekat klase Grupa.
      */
     public Clan(int clanID, String ime, String prezime, Date datumRodjenja, String adresa, String brojTelefona, Grad grad, Grupa grupa) {
-        this.clanID = clanID;
-        this.ime = ime;
-        this.prezime = prezime;
-        this.datumRodjenja = datumRodjenja;
-        this.adresa = adresa;
-        this.brojTelefona = brojTelefona;
-        this.grad = grad;
-        this.grupa = grupa;
+       setClanID(clanID);
+       setIme(ime);
+       setPrezime(prezime);
+       setDatumRodjenja(datumRodjenja);
+       setAdresa(adresa);
+       setBrojTelefona(brojTelefona);
+       setGrad(grad);
+       setGrupa(grupa);
     }
 
     
@@ -153,8 +153,8 @@ public class Clan implements OpstiDomenskiObjekat{
      * @throws IllegalArgumentException ako je clanID manji od 1.
      */
     public void setClanID(int clanID) {
-    	if(clanID<1) {
-    		throw new IllegalArgumentException("ClanId ne sme biti manji od jedan");
+    	if(clanID<0) {
+    		throw new IllegalArgumentException("ClanId ne sme biti manji od nula");
     	}
         this.clanID = clanID;
     }

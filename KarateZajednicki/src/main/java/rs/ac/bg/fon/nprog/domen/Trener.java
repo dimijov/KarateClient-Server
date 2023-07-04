@@ -85,7 +85,7 @@ public class Trener implements OpstiDomenskiObjekat {
      * @param trenerID ID trenera kao int.
      */
     public Trener(int trenerID) {
-        this.trenerID = trenerID;
+        setTrenerID(trenerID);
     }
 
     
@@ -95,8 +95,8 @@ public class Trener implements OpstiDomenskiObjekat {
      * @param password Lozinka trenera kao String.
      */
     public Trener(String username, String password) {
-        this.username = username;
-        this.password = password;
+        setUsername(username);
+        setPassword(password);
     }
 
     
@@ -111,14 +111,15 @@ public class Trener implements OpstiDomenskiObjekat {
      * @param password Lozinka trenera kao String.
      */
     public Trener(int trenerID, String ime, String prezime, int godineIskustva, String pojas, String username, String password) {
-        this.trenerID = trenerID;
-        this.ime = ime;
-        this.prezime = prezime;
-        this.godineIskustva = godineIskustva;
-        this.pojas = pojas;
-        this.username = username;
-        this.password = password;
+        setTrenerID(trenerID);
+        setIme(ime);
+        setPrezime(prezime);
+        setGodineIskustva(godineIskustva);
+        setPojas(pojas);
+        setUsername(username);
+        setPassword(password);
     }
+       	
 
     
     /**
@@ -158,8 +159,8 @@ public class Trener implements OpstiDomenskiObjekat {
      * @throws IllegalArgumentException ako je trenerID manji od 1.
      */
     public void setTrenerID(int trenerID) {
-    	if(trenerID<1) {
-    		throw new IllegalArgumentException("TrenerID ne sme biti manji od jedan");
+    	if(trenerID<0) {
+    		throw new IllegalArgumentException("TrenerID ne sme biti manji od nula");
     	}
         this.trenerID = trenerID;
     }

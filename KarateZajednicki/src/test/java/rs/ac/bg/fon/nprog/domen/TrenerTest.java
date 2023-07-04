@@ -102,8 +102,8 @@ class TrenerTest {
 	}
 	
 	@Test
-	void testTrenersetTrenerIDnula() {
-		assertThrows(java.lang.IllegalArgumentException.class, ()->t.setTrenerID(0));
+	void testTrenersetTrenerIDNegative() {
+		assertThrows(java.lang.IllegalArgumentException.class, ()->t.setTrenerID(-1));
 	}
 	
 	@Test

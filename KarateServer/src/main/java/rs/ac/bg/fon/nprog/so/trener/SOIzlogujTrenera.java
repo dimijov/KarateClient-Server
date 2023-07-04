@@ -32,7 +32,7 @@ public class SOIzlogujTrenera extends OpstaSO {
      * @param trener Trener koji se odjavljuje sa sistema.
      */
     public SOIzlogujTrenera(OpstiDomenskiObjekat trener) {
-        this.trener = trener;
+        setTrener(trener);
     }
 
     

@@ -65,7 +65,9 @@ public class DodajTrening extends javax.swing.JFrame {
         grupa.add(rbsrednje);
         grupa.add(rbtesko);
         this.glavnaForma = glavna;
-        trening =new Trening(0, "", null, 0, trener, null, null);
+        //trening =new Trening(0, "", null, 0, trener, null, null);
+        trening=new Trening(0);
+        trening.setTrener(trener);
         txtTrajanje.setText(String.valueOf(trening.getTrajanje()));
         popuniTabeluVezbe();
         this.status = "unos";

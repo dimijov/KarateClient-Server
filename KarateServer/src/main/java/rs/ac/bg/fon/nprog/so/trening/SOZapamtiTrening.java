@@ -44,7 +44,7 @@ public class SOZapamtiTrening extends OpstaSO {
      */
     public SOZapamtiTrening(OpstiDomenskiObjekat param) {
     	super();
-        this.param = param;
+    	setParam(param);
     }
     
     

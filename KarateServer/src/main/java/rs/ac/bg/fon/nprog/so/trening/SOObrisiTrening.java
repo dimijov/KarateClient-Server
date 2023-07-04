@@ -37,7 +37,7 @@ public class SOObrisiTrening extends OpstaSO {
      */
     public SOObrisiTrening(OpstiDomenskiObjekat param) {
     	super();
-        this.param = param;
+        setParam(param);
     }
     
     

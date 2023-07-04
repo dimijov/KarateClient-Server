@@ -69,8 +69,8 @@ class GradTest {
 	}
 	
 	@Test
-	void testGradsetGradIdNula() {
-		assertThrows(IllegalArgumentException.class,()->g.setGradID(0));
+	void testGradsetGradIdNegative() {
+		assertThrows(IllegalArgumentException.class,()->g.setGradID(-1));
 	}
 	
 	@Test

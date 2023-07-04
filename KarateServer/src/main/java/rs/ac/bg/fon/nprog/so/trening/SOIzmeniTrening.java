@@ -44,7 +44,7 @@ public class SOIzmeniTrening extends OpstaSO {
      */
     public SOIzmeniTrening(OpstiDomenskiObjekat param) {
     	super();
-        this.param = param;
+        setParam(param);
         
     }
     
